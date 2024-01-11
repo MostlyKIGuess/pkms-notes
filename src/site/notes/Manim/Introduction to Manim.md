@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/manim/introduction-to-manim/"}
+{"dg-publish":true,"permalink":"/manim/introduction-to-manim/","noteIcon":""}
 ---
 
 - Basics of running manim:
@@ -16,7 +16,7 @@
 	        self.play(Create(text))
 	```
 Output:
-![[MyScene.mp4]]
+![Output:](https://youtu.be/1JHjW-L-vjk)
 
 - To get the output you would do the following in your terminal with the same directory as your manim python file.
 ```
