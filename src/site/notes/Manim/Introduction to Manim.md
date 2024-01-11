@@ -9,17 +9,17 @@
    ```python
    from manim import *
 
-class MyScene(Scene):
-    def construct(self):
+	class MyScene(Scene):
+	    def construct(self):
         # Your animation code
-        text = Text("Hello, Manim!")
-        self.play(Create(text))
-```
+	        text = Text("Hello, Manim!")
+	        self.play(Create(text))
+	```
 Output:
 ![[MyScene.mp4]]
 
 - To get the output you would do the following in your terminal with the same directory as your manim python file.
-```sh
+```
 manim (filename.py) (ClassName) -pqh 
 ```
 here write those without the brackets and -pqh suggests, play quality high, you can use
