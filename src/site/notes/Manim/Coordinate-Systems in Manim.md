@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/manim/coordinate-systems-in-manim/"}
+{"dg-publish":true,"permalink":"/manim/coordinate-systems-in-manim/","noteIcon":""}
 ---
 
 - We have 2 ways to create coordinate systems, one of them is NumberPlane and the other one is Axes, I will show what both looks like here:
