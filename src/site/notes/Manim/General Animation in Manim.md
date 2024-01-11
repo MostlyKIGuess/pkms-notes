@@ -111,7 +111,7 @@ rolling_circle.add_updater(lambda m: m.rotate(+0.2))
 
 self.play(rolling_circle.animate.shift(8*LEFT), run_time=4,rate_func = linear)
 ```
-![[Tracing.mp4]]
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hJMDiU3lZLU?si=ELFPHdh4LyGvI__J" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 - Here we have used the previously discussed function and different type of tracing by modifying parameters.
 
 { #ed7255}
