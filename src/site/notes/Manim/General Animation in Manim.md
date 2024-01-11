@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/manim/general-animation-in-manim/"}
+{"dg-publish":true,"permalink":"/manim/general-animation-in-manim/","noteIcon":""}
 ---
 
 
