@@ -1,3 +1,7 @@
+---
+{"dg-publish":true,"permalink":"/manim/coordinate-systems-in-manim/"}
+---
+
 - We have 2 ways to create coordinate systems, one of them is NumberPlane and the other one is Axes, I will show what both looks like here:
 - One thing I would mention is when you assign coordinates to shift like I am doing here, we use c2p, which literally means cords to points, it is in reference "to" the mobject and not to the coordinate system, so I have shown example in this one how it works.
 ```python
