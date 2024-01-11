@@ -47,7 +47,7 @@ self.play(Rotating(triangle))
 self.play(FadeOut(triangle))
 ```
 Output:
-![[AnimationExample.mp4]]
+![AnimationExample_ManimCE_v0.18.0.gif](/img/user/Manim/AnimationExample_ManimCE_v0.18.0.gif)
 - Explanation Line by Line:
 	- First line as I mentioned we create a class that we work on, so to play this we would have done in the terminal:
 	```sh
