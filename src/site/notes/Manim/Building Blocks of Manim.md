@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/manim/building-blocks-of-manim/"}
+{"dg-publish":true,"permalink":"/manim/building-blocks-of-manim/","noteIcon":""}
 ---
 
 
@@ -54,7 +54,8 @@ class SomeAnimations(Scene):
         self.wait(1)
 ```
 Output:
-![[SomeAnimations-1.mp4]]
+<iframe width="560" height="315" src="https://www.youtube.com/embed/a34tjLjBop8?si=mOhU7NE3zqWShDqg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ### Rotate:
 ```python
 
@@ -133,7 +134,8 @@ run_time = 3,
 
 )
 ```
-![[Rotation.mp4]]
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/elpkihiKYSI?si=rjiqB-YtoRLlpZWY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ### move_to || next_to || edge_to || grow_from_center
 - move_to:

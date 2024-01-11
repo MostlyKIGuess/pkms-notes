@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/manim/scenes-in-manim/"}
+{"dg-publish":true,"permalink":"/manim/scenes-in-manim/","noteIcon":""}
 ---
 
 

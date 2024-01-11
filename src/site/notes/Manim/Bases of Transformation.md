@@ -1,4 +1,4 @@
 ---
-{"dg-publish":true,"permalink":"/manim/bases-of-transformation/"}
+{"dg-publish":true,"permalink":"/manim/bases-of-transformation/","noteIcon":""}
 ---
 

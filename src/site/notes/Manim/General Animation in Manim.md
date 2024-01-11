@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/manim/general-animation-in-manim/"}
+{"dg-publish":true,"permalink":"/manim/general-animation-in-manim/","noteIcon":""}
 ---
 
 
@@ -47,7 +47,7 @@ self.play(Rotating(triangle))
 self.play(FadeOut(triangle))
 ```
 Output:
-![[AnimationExample.mp4]]
+![AnimationExample_ManimCE_v0.18.0.gif](/img/user/Manim/AnimationExample_ManimCE_v0.18.0.gif)
 - Explanation Line by Line:
 	- First line as I mentioned we create a class that we work on, so to play this we would have done in the terminal:
 	```sh
@@ -111,7 +111,7 @@ rolling_circle.add_updater(lambda m: m.rotate(+0.2))
 
 self.play(rolling_circle.animate.shift(8*LEFT), run_time=4,rate_func = linear)
 ```
-![[Tracing.mp4]]
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hJMDiU3lZLU?si=ELFPHdh4LyGvI__J" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 - Here we have used the previously discussed function and different type of tracing by modifying parameters.
 
 { #ed7255}

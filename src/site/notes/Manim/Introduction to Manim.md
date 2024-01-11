@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/manim/introduction-to-manim/"}
+{"dg-publish":true,"permalink":"/manim/introduction-to-manim/","noteIcon":""}
 ---
 
 - Basics of running manim:
@@ -16,7 +16,8 @@
 	        self.play(Create(text))
 	```
 Output:
-![[MyScene.mp4]]
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/1JHjW-L-vjk?si=qpVTT4qXdVQAVp7d" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 - To get the output you would do the following in your terminal with the same directory as your manim python file.
 ```
