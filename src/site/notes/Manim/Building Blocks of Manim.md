@@ -55,6 +55,7 @@ class SomeAnimations(Scene):
 ```
 Output:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/a34tjLjBop8?si=mOhU7NE3zqWShDqg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ### Rotate:
 ```python
 
