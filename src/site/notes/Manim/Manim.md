@@ -1,18 +1,18 @@
 ---
-dg-home: true
-dg-publish: true
+{"dg-publish":true,"permalink":"/manim/manim/","tags":["gardenEntry"]}
 ---
+
 
 Manim is a python library which will allow us to animate stuff.
 
-- [[Introduction to Manim]]
-- [[Why Manim?]]
-- [[Text Animation in Manim]]
-- [[General Animation in Manim]]
-- [[Building Blocks of Manim]]
-- [[Common Functions in Manim]]
-- [[Transformation in Manim]]
-- [[Bases of Transformation]]
-- [[Coordinate-Systems in Manim]]
+- [[Manim/Introduction to Manim\|Introduction to Manim]]
+- [[Manim/Why Manim?\|Why Manim?]]
+- [[Manim/Text Animation in Manim\|Text Animation in Manim]]
+- [[Manim/General Animation in Manim\|General Animation in Manim]]
+- [[Manim/Building Blocks of Manim\|Building Blocks of Manim]]
+- [[Manim/Common Functions in Manim\|Common Functions in Manim]]
+- [[Manim/Transformation in Manim\|Transformation in Manim]]
+- [[Manim/Bases of Transformation\|Bases of Transformation]]
+- [[Manim/Coordinate-Systems in Manim\|Coordinate-Systems in Manim]]
 - 
-- [[Scenes in Manim]]
+- [[Manim/Scenes in Manim\|Scenes in Manim]]
