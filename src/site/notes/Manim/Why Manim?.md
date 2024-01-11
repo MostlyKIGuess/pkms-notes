@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/manim/why-manim/"}
+{"dg-publish":true,"permalink":"/manim/why-manim/","noteIcon":""}
 ---
 
 - You might be wondering, if manim is this code intensive, why manim?
