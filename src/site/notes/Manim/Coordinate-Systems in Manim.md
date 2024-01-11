@@ -71,4 +71,4 @@ self.play(dot.animate.shift(Grid.c2p(-2, -3)))
 
 self.wait(1)
 ```
-![[SpeedExample.mp4]]
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XAbJ5BOHffI?si=LZmQSTla1cMXah0f" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
