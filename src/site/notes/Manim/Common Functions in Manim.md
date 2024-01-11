@@ -99,7 +99,7 @@ self.play((vgroup1-Circle1).animate.shift(2*LEFT)) #animate group without a sing
 self.wait(1)
 ```
 Output:
-![[VGroupExample.mp4]]
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TdtXN6qBUdo?si=KUzGmqhjTUCGoe28" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 
 ## add_updater
@@ -137,7 +137,7 @@ class ValueTrackerExample(Scene):
         self.play(tracker.animate.increment_value(-2))
         self.wait(0.5)
 ```
-![[ValueTrackerExample-1.mp4]]
+<iframe width="560" height="315" src="https://www.youtube.com/embed/h7cLn_hpb50?si=gVguX26-5VfOTz_x" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 { #1baea5}
 
