@@ -1,8 +1,13 @@
+---
+{"dg-publish":true,"permalink":"/manim/common-functions-in-manim/"}
+---
+
+
 This will contain list of some useful functions ,which I find useful haha, almost every function is useful but I just prefer these.
 
 ### ReplacementTransform
+{ #3e9409}
 
-^3e9409
 
 ---
 
@@ -15,8 +20,8 @@ This will contain list of some useful functions ,which I find useful haha, almos
 	    The target `~.Mobject`.
 
 ## TracedPath
+{ #9c76cd}
 
-^9c76cd
 
 ```python
 class TracedPath(traced_point_func, stroke_width=2, stroke_color=ManimColor('#FFFFFF'), dissipating_time=None, **kwargs)
@@ -98,8 +103,8 @@ Output:
 
 
 ## add_updater
+{ #561871}
 
-^561871
 
 - Add an update function to the scene.
 	The scene updater functions are run every frame, and they are the last type of updaters to run.
@@ -134,6 +139,6 @@ class ValueTrackerExample(Scene):
 ```
 ![[ValueTrackerExample-1.mp4]]
 
+{ #1baea5}
 
-^1baea5
 
