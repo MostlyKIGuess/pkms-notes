@@ -202,7 +202,7 @@ self.play(square.animate.shift(3*UP).rotate(PI/4).scale(2),runtime = 3)
 
 self.play(ReplacementTransform(square, triangle),runtime = 3)
 ```
-![[Custom.mp4]]
+<iframe width="560" height="315" src="https://www.youtube.com/embed/chVj-mr95hA?si=2Q_VvwIIcFfR6ooR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 - Here we used our knowledge of animate method along with building blocks to understand how to animate stuff in manim, first we are creating a square , then we learnt above that to fill it any color we would use set fill, now we remember we had already done set fill before the animation in self.play right?
 - So what happens is it renders the red block directly, to explain this further I have used Rotate which as I explained a way to rotate that mobject,now we want to set a stroke but we also want to animate it then we use .animate.set_stroke rather than just doing it directly, you can see in the video what happens if we do it directly, we used self.wait() to observe that frame and grasp it fully, then we saw how fill can be animated as well.
 - Now for the shift up, if we would have just shifted up it would not have rotated, but we also want to rotate it and scale it twice, so we use multiple parameters methods here and you can also not specify the runtime, but it's a good practice to do so for convenience of understanding how your animation will look like, then we use ReplacementTransform function which you can find [[Manim/Common Functions in Manim#^3e9409\|Common Functions in Manim#^3e9409]] here. To morph triangle into the square. 
