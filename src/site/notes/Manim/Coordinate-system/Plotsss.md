@@ -148,7 +148,6 @@ fill_opacity=0.5,
 checkerboard_colors=[TEAL, TEAL_B],
 
 )
-
 self.play(Create(threedplot),run_time = 10)
 
 ```
