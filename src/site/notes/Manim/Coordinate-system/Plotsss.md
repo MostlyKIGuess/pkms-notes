@@ -153,3 +153,37 @@ self.play(Create(threedplot),run_time = 10)
 
 ```
 <iframe width="560" height="315" src="https://www.youtube.com/embed/CNW8vJtXpak?si=fD_6tRcpfQemDSv9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
+```python
+def Coolfuncig(u,v):
+
+x = u;
+
+y = v;
+
+s = np.sqrt(u**2+v**2 + 0.000000001);
+
+z = abs(1/s);
+
+return z;
+
+# self.play(Create(threedplot),run_time = 10)
+
+plot = threed.plot_surface(
+
+Coolfuncig,
+
+u_range=[-3,3],
+
+v_range=[-3,3],
+
+color=BLUE,
+
+fill_opacity=0.9,
+
+checkerboard_colors=[TEAL, TEAL_B],
+
+)
+
+self.play(Create(plot),run_time = 3)
+```
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Rzmpuo7lspk?si=mXrSAFZxVxSnSXEJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
