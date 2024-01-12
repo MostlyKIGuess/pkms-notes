@@ -165,8 +165,6 @@ z = abs(1/s);
 
 return z;
 
-# self.play(Create(threedplot),run_time = 10)
-
 plot = threed.plot_surface(
 
 Coolfuncig,
