@@ -185,4 +185,6 @@ checkerboard_colors=[TEAL, TEAL_B],
 
 self.play(Create(plot),run_time = 3)
 ```
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Rzmpuo7lspk?si=mXrSAFZxVxSnSXEJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Rzmpuo7lspk?si=7fAM5v-6xhEZzZPs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
+
+
