@@ -13,3 +13,5 @@ All of these function will return co-ordinates.
 	alias  **i2gp(x,graph)**
 - input_to_graph_coords(x,graph) - returns ($x,f(x)$)
 	alias **i2gc(x,graph)** 
+- polar_to_point(r,theta(in rad))-returns the polar coordinates
+{ #d1ec51}
