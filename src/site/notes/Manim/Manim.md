@@ -14,5 +14,5 @@ Manim is a python library which will allow us to animate stuff.
 - [[Manim/Transformation in Manim\|Transformation in Manim]]
 - [[Manim/Bases of Transformation\|Bases of Transformation]]
 - [[Manim/Coordinate-system/Coordinate-Systems in Manim\|Coordinate-Systems in Manim]]
-- 
+- [[Manim/Matrix/Matrix in Manim\|Matrix in Manim]]
 - [[Manim/Scenes in Manim\|Scenes in Manim]]
