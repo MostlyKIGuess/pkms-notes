@@ -103,6 +103,7 @@ graph = polar.plot_polar_graph(cannabis, [0, 2*PI],color=RED)
 self.play(Create(graph),run_time = 10)
 ```
 <iframe width="560" height="315" src="https://www.youtube.com/embed/PqX_PBT96zM?si=cbketqx22RL8Qy24" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
+- To add points int the polar plane we use [[Manim/Coordinate-system/Points Generation#^d1ec51\|Points Generation#^d1ec51]]
 
 ## 3D Graphs
 - For 3D Graphs we use something called as plot_surface and ThreeDScene to set up camera and stuff.
@@ -186,6 +187,7 @@ checkerboard_colors=[TEAL, TEAL_B],
 self.play(Create(plot),run_time = 3)
 ```
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Rzmpuo7lspk?si=MPVkbBVG3temiyDy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
+
 
 
 
