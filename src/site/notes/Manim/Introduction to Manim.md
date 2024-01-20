@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/manim/introduction-to-manim/","noteIcon":""}
+{"dg-publish":true,"permalink":"/manim/introduction-to-manim/"}
 ---
 
 - Basics of running manim:
