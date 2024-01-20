@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/manim/coordinate-system/coordinate-systems-in-manim/","noteIcon":""}
+{"dg-publish":true,"permalink":"/manim/coordinate-system/coordinate-systems-in-manim/"}
 ---
 
 
