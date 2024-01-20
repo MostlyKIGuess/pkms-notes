@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/manim/transformation-in-manim/","noteIcon":""}
+{"dg-publish":true,"permalink":"/manim/transformation-in-manim/"}
 ---
 
 - As we saw in the Building blocks there are many simple function, now we dwell a little deeper into this transformation which will make things more interesting.
