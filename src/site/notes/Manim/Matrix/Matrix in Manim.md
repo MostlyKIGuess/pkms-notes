@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/manim/matrix/matrix-in-manim/","noteIcon":""}
+{"dg-publish":true,"permalink":"/manim/matrix/matrix-in-manim/"}
 ---
 
 - As discussed earlier they kind of work like numpy arrays, so here's an example to kick start
