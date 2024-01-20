@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/manim/coordinate-system/points-generation/","noteIcon":""}
+{"dg-publish":true,"permalink":"/manim/coordinate-system/points-generation/"}
 ---
 
 
