@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/manim/building-blocks-of-manim/","noteIcon":""}
+{"dg-publish":true,"permalink":"/manim/building-blocks-of-manim/"}
 ---
 
 
