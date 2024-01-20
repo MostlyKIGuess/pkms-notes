@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/manim/common-functions-in-manim/","noteIcon":""}
+{"dg-publish":true,"permalink":"/manim/common-functions-in-manim/"}
 ---
 
 
