@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/manim/manim/","tags":["gardenEntry"],"noteIcon":""}
+{"dg-publish":true,"permalink":"/manim/manim/","tags":["gardenEntry"]}
 ---
 
 
