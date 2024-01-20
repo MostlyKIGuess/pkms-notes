@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/manim/coordinate-system/graphs/reimann-integrals-and-slopes/","noteIcon":""}
+{"dg-publish":true,"permalink":"/manim/coordinate-system/graphs/reimann-integrals-and-slopes/"}
 ---
 
 
