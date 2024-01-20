@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/manim/coordinate-system/plotsss/","noteIcon":""}
+{"dg-publish":true,"permalink":"/manim/coordinate-system/plotsss/"}
 ---
 
 
