@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/manim/coordinate-system/graphs/working-with-graphs-and-integrals/","noteIcon":""}
+{"dg-publish":true,"permalink":"/manim/coordinate-system/graphs/working-with-graphs-and-integrals/"}
 ---
 
 
