@@ -1,10 +1,10 @@
 {
     "outputDirectory": "dist",
-    "installCommand": "npm install",
+    "installCommand": "npm install && npm install @vercel/analytics",
     "buildCommand": "npm run build",
     "devCommand": "npm run start",
     "routes": [
         { "handle": "filesystem" },
         { "src": "/(.*)", "status": 404, "dest": "/404" }
-      ]
+    ]
 }
