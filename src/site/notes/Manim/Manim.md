@@ -6,7 +6,7 @@
 Manim is a python library which will allow us to animate stuff.
 
 - [[Manim/Introduction to Manim\|Introduction to Manim]]
-- [[Manim/Why Manim?\|Why Manim?]]
+- [[Why Manim?\|Why Manim?]]
 - [[Manim/Text Animation in Manim\|Text Animation in Manim]]
 - [[Manim/General Animation in Manim\|General Animation in Manim]]
 - [[Manim/Building Blocks of Manim\|Building Blocks of Manim]]
