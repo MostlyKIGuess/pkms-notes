@@ -33,7 +33,7 @@ class MatrixExamples(Scene):
         ).arrange_in_grid(buff=2)
         self.add(g)
 ```
-![Pasted image 20240115025634](/img/user/Manim/Matrix/Pasted image 20240115025634.png)
+![Pasted image 20240115025634](Pasted%20image%2020240115025634.png)
 - You can apply Matrix Transformations as we discussed [](Transformation%20in%20Manim.md#^a80ada) , even in 3D for example:
 ```python
 from manim import *
