@@ -29,7 +29,10 @@ The cost function for linear regression is given by:
 
 $$ J(\theta) = \frac{1}{2} (X\theta - \vec{y})^T (X\theta - \vec{y}) = \frac{1}{2} \sum_{i=1}^m (h_\theta(x^{(i)}) - y^{(i)})^2 $$
 
-At this point, we need to find the derivative of $J$ with respect to $\theta$. From the properties of the trace, we know that: $$ \nabla_A \text{tr}(A^T B A C) = B^T A^T C^T + B A C $$ We also know the trace of a scalar is itself. Then: $$ \begin{aligned} \nabla_\theta J(\theta) &= \nabla_\theta \frac{1}{2} (X\theta - \vec{y})^T (X\theta - \vec{y}) \\ &= \frac{1}{2} \nabla_\theta \text{tr}(\theta^T X^T X \theta - \theta^T X^T \vec{y} - \vec{y}^T X \theta + \vec{y}^T \vec{y}) \\ &= \frac{1}{2} \nabla_\theta (\text{tr}(\theta^T X^T X \theta) - 2 \text{tr}(\vec{y}^T X \theta)) \\ &= \frac{1}{2} \nabla_\theta ( \theta^T X^T X \theta + \theta^T X^T X \theta - 2 X^T \vec{y}) \\ &= X^T X \theta - X^T \vec{y} \end{aligned} $$ Here, the second line results from applying $a = \text{tr}(a)$ where $a$ is a scalar. The third line comes from the fact that
+At this point, we need to find the derivative of $J$ with respect to $\theta$. From the properties of the trace, we know that: $$ \nabla_A \text{tr}(A^T B A C) = B^T A^T C^T + B A C $$ We also know the trace of a scalar is itself. Then: 
+
+$$ \begin{aligned} \nabla_\theta J(\theta) &= \nabla_\theta \frac{1}{2} (X\theta - \vec{y})^T (X\theta - \vec{y}) \\ &= \frac{1}{2} \nabla_\theta \text{tr}(\theta^T X^T X \theta - \theta^T X^T \vec{y} - \vec{y}^T X \theta + \vec{y}^T \vec{y}) \\ &= \frac{1}{2} \nabla_\theta (\text{tr}(\theta^T X^T X \theta) - 2 \text{tr}(\vec{y}^T X \theta)) \\ &= \frac{1}{2} \nabla_\theta ( \theta^T X^T X \theta + \theta^T X^T X \theta - 2 X^T \vec{y}) \\ &= X^T X \theta - X^T \vec{y} \end{aligned} $$
+Here, the second line results from applying $a = \text{tr}(a)$ where $a$ is a scalar. The third line comes from the fact that
 (1) the derivative with respect to $\theta$ of $\vec{y}^T \vec{y}$ is zero; 
 (2) $\text{tr}(A + B) = \text{tr}(A) + \text{tr}(B)$; and 
 (3) $- \theta^T X^T \vec{y} - \vec{y}^T X \theta = -2 \vec{y}^T X \theta$. 
