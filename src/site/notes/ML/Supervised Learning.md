@@ -11,5 +11,6 @@ well well the good old start.
 - [[ML/Generalized Linear Models\|Generalized Linear Models]]
 
 ## Generative Algorithms
+- [[ML/GDA\|GDA]]
 
 
