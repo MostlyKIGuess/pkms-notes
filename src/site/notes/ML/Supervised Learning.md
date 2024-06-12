@@ -4,7 +4,12 @@
 
 well well the good old start.
 
-[[ML/Linear Regression\|Linear Regression]]
+## Discriminative Algorithms:
 
-[[ML/Logistic Regression\|Logistic Regression]]
+- [[ML/Linear Regression\|Linear Regression]]
+- [[ML/Logistic Regression\|Logistic Regression]]
+- [[ML/Generalized Linear Models\|Generalized Linear Models]]
+
+## Generative Algorithms
+
 
