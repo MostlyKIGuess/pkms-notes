@@ -143,3 +143,4 @@ We can use gradient descent or Newton’s method to find the maximum of it.
 
 
 
+[[ML/GDA\|GDA]]
