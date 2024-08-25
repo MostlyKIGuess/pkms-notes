@@ -1,3 +1,5 @@
+!! Outdated README
+
 # Manim-PKMS
 - This repo is my deployment of stufff I have learnt using manim.
 - It is made using obsidian.md and https://dg-docs.ole.dev/.
