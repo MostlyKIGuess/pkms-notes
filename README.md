@@ -1,8 +1,9 @@
-# Manim-PKMS
-- This repo is my deployment of stufff I have learnt using manim.
-- It is made using obsidian.md and https://dg-docs.ole.dev/.
+# Digital Obsidian Garden
+This is the template to be used together with the [Digital Garden Obsidian Plugin](https://github.com/oleeskild/Obsidian-Digital-Garden). 
+See the README in the plugin repo for information on how to set it up.
 
-  ### Why?
-  - It sorts you knowledge into so called "second-brain" which imo is very cool also it is very easily accessible inside the website so it's fun.
-  ### Aim?
-  - FUN
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/oleeskild/digitalgarden)
+
+---
+## Docs
+Docs are available at [dg-docs.ole.dev](https://dg-docs.ole.dev/)
