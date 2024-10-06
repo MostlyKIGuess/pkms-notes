@@ -8,8 +8,8 @@ from manim import *
 
 class MatrixExamples(Scene):
     def construct(self):
-        m0 = Matrix([2, "\pi"](2,%20"%5Cpi"))
-        m1 = Matrix([2, 0, 4](2,%200,%204),
+        m0 = Matrix([[2, "\pi"]])
+        m1 = Matrix([[2, 0, 4]],
             v_buff=1.3,
             h_buff=0.8,
             bracket_h_buff=SMALL_BUFF,
@@ -17,24 +17,30 @@ class MatrixExamples(Scene):
             left_bracket="\{",
             right_bracket="\}")
         m1.add(SurroundingRectangle(m1.get_columns()[1]))
-        m2 = Matrix([2, 1](2,%201),
+        m2 = Matrix([[2, 1]],
             element_alignment_corner=UL,
             left_bracket="(",
             right_bracket=")")
-        m3 = Matrix([2, 1](2,%201),
+        m3 = Matrix([[2, 1]],
             left_bracket="\\langle",
             right_bracket="\\rangle")
-        m4 = Matrix([2, 1](2,%201),
+        m4 = Matrix([[2, 1]],
         ).set_column_colors(RED, GREEN)
-        m5 = Matrix([2, 1](2,%201),
+        m5 = Matrix([[2, 1]],
         ).set_row_colors(RED, GREEN)
         g = Group(
             m0,m1,m2,m3,m4,m5
         ).arrange_in_grid(buff=2)
         self.add(g)
 ```
-![Pasted image 20240115025634](Pasted%20image%2020240115025634.png)
-- You can apply Matrix Transformations as we discussed [](Transformation%20in%20Manim.md#^a80ada) , even in 3D for example:
+
+
+![Pasted_image_20240115025634.png| Matrix Image](/img/user/Manim/Matrix/Pasted_image_20240115025634.png)
+
+
+
+
+- You can apply Matrix Transformations as we discussed [[Manim/Transformation in Manim#^a80ada\|../Transformation in Manim#^a80ada]] , even in 3D for example:
 ```python
 from manim import *
 
@@ -108,7 +114,7 @@ color=RED,
 
 )
 
-matrix = [-1, 2, 0](-1,%202,%200)
+matrix = [[-1, 2, 0]]
 
 group = VGroup(arrow, icap, jcap, kcap)
 
