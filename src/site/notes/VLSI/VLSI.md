@@ -3,5 +3,9 @@
 ---
 
 
-## [[VLSI/Synthesis\|Synthesis]]
+# [[VLSI/Synthesis\|Synthesis]]
+
+# Introduction to Basics
+
+## Basic Gates
 
