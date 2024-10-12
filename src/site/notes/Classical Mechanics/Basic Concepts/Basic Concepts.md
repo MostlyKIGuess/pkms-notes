@@ -6,7 +6,7 @@
 
 [[Classical Mechanics/Basic Concepts/Laws of Newton\|Laws of Newton]]
 
-[[Energy and Work \|Energy and Work ]]
+[[Classical Mechanics/Basic Concepts/Energy and Work\|Energy and Work]]
 
 [[Classical Mechanics/Basic Concepts/Conservative Forces and Work\|Conservative Forces and Work]]
 
