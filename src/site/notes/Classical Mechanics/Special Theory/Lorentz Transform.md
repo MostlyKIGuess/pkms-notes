@@ -6,6 +6,8 @@
 
 ### Lorentz Transformation Equations
 
+Good Resource: https://www.feynmanlectures.caltech.edu/II_26.html
+
 For a frame moving with velocity $v$ along the $x$-axis, the Lorentz transformation equations are:
 
 - **Time Transformation**:
