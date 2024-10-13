@@ -3,10 +3,11 @@
 ---
 
 
-- I think I have missed it but we use .plot to [Plotsss](Plotsss.md)  and get graphs. So whenever I say graph I mean the return value of .plot, it returns parametric function.
+- I think I have missed it but we use .plot to [[Manim/Coordinate-system/Plotsss\|Plotsss]]  and get graphs. So whenever I say graph I mean the return value of .plot, it returns parametric function.
 
 - We have 2 ways to create coordinate systems, one of them is NumberPlane and the other one is Axes, I will show what both looks like here:
-- One thing I would mention is when you assign coordinates to shift like I am doing here, we use c2p, which literally means cords to points, it is in reference "to" the mobject and not to the coordinate system, so I have shown example in this one how it works. Here are more point generations [Points Generation](Points%20Generation.md).
+- One thing I would mention is when you assign coordinates to shift like I am doing here, we use c2p, which literally means cords to points, it is in reference "to" the mobject and not to the coordinate system, so I have shown example in this one how it works. Here are more point generations [[Manim/Coordinate-system/Points Generation\|Points Generation]].
+- And also [[Manim/Coordinate-system/Graphs/Working with Graphs and Integrals\|Working with Graphs and Integrals]].
 ### c2p  || NumberPlane
 
 ```python
@@ -144,3 +145,4 @@ self.wait(1)
 	self.wait()
 	```
 <iframe width="560" height="315" src="https://www.youtube.com/embed/0dUo1YX08rQ?si=c_Hm8UXWyXAnH9zk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
+
