@@ -6,7 +6,10 @@
 
 ### Lorentz Transformation Equations
 
-Good Resource: https://www.feynmanlectures.caltech.edu/II_26.html
+Good Resource: 
+- https://www.feynmanlectures.caltech.edu/II_26.html
+- https://www.desmos.com/calculator/j4b0gp6vhw
+
 
 For a frame moving with velocity $v$ along the $x$-axis, the Lorentz transformation equations are:
 
@@ -39,33 +42,38 @@ The Lorentz transformation ensures that the speed of light is constant ($c$) in 
 
 The following diagram shows the relationship between time ($t$) and space ($x$) in both the stationary frame $(t, x)$ and the moving frame $(t', x')$.
 
-```tikz
-\begin{document}
-\begin{tikzpicture}[scale=3.0]
-
-% Draw axes for the stationary frame
-\draw[->] (-1, 0) -- (5, 0) node[right] {$x$}; % x-axis
-\draw[->] (0, -1) -- (0, 5) node[above] {$t$}; % t-axis
-
-% Worldline of object moving at speed of light (red)
-\draw[thick, red] (0, 0) -- (4, 4) node[above right] {Object 3 ($v = c$)};
-\draw[thick, red, dashed] (0, 0) -- (2.5, 4) node[above right] {$x' = ct'$};
-
-% Worldline of object 1 (blue, slower than light)
-\draw[thick, blue] (0, 0) -- (4, 3) node[above right] {Object 1 ($v_1 < c$)};
-\draw[thick, blue, dashed] (0, 0) -- (2, 4) node[above right] {$x'_1 = v_1 t'$};
-
-% Worldline of object 2 (green, slower than light)
-\draw[thick, green] (0, 0) -- (4, 2) node[above right] {Object 2 ($v_2 < c$)};
-\draw[thick, green, dashed] (0, 0) -- (1.5, 4) node[above right] {$x'_2 = v_2 t'$};
-
-% Labels for axes
-\draw (4, 0) node[below] {Space ($x$)};
-\draw (0, 4) node[left] {Time ($t$)};
+![Pasted image 20241013153217.png](/img/user/Classical%20Mechanics/Special%20Theory/Pasted%20image%2020241013153217.png)
 
 
-\end{tikzpicture}
-\end{document}
+### Visualizing Time Dilation with Lorentz Transformation
 
-```
+**Time Dilation** occurs because time passes differently for observers moving relative to each other. For an observer in motion, clocks in the stationary frame appear to run slower.
+
+#### Intuition:
+Imagine a moving object, say a spaceship, equipped with a clock. From the perspective of someone on Earth (stationary frame), the clock aboard the spaceship ticks more slowly. The Lorentz transformation shows that the time experienced by the moving spaceship ($t'$) is less than the time experienced by the stationary observer ($t$), by a factor of $\gamma$.
+
+To visualize this:
+
+1. In the **stationary frame**, time passes normally along the $t$-axis.
+2. In the **moving frame**, time is tilted along the $t'$-axis. As a result, for the same amount of movement in space, less time elapses on the moving clock. This is time dilation.
+
+
+### Visualizing Length Contraction with Lorentz Transformation
+
+**Length Contraction** is the phenomenon where an object moving relative to an observer appears shortened along the direction of motion. In the Lorentz transformation, this contraction happens because space is "squeezed" in the direction of motion.
+
+#### Intuition:
+If a spaceship is moving close to the speed of light, its length (in the direction of motion) appears contracted to an observer on Earth. The faster the spaceship moves, the more it contracts.
+
+To visualize this:
+
+1. In the **stationary frame**, the spaceship has a proper length $L$.
+2. In the **moving frame**, this length is contracted by a factor of $\gamma$, and the new length $L' = \frac{L}{\gamma}$ appears shorter.
+
+### Graph of Length Contraction and Time Dilation:
+
+![Pasted image 20241013172159.png](/img/user/Classical%20Mechanics/Special%20Theory/Pasted%20image%2020241013172159.png)
+
+
+---
 
