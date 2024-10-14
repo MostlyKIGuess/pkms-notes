@@ -57,7 +57,7 @@
 
 
 - Good Resource to enjoy:
-https://youtube.com/playlist?list=PLoaVOjvkzQtyjhV55wZcdicAz5KexgKvm&si=KrO6LX8HW971CYmu
+ https://youtube.com/playlist?list=PLoaVOjvkzQtyjhV55wZcdicAz5KexgKvm&si=KrO6LX8HW971CYmu
 
 
 - [[Classical Mechanics/Special Theory/SpaceTime Diagram\|SpaceTime Diagram]]
