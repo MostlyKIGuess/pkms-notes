@@ -9,5 +9,7 @@
 
 [[Classical Mechanics/Special Theory/Special Theory\|Special Theory]]
 
+[[Classical Mechanics/Lagrangian and Hamiltonian Dynamics/Lagrangian and Hamiltonian Dynamics\|Lagrangian and Hamiltonian Dynamics]]
+
 
 
