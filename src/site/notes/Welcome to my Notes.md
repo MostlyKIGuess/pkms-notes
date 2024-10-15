@@ -60,7 +60,6 @@ xD , I put my fav movie quotes on random order here.
 
 PS: - Perfect Days is so goooood
 
-![Pasted image 20241015112322](/img/user/Pasted image 20241015112322.png)
 
-
+![Pasted image 20241015112322.png](/img/user/Pasted%20image%2020241015112322.png)
 
