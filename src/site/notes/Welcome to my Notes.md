@@ -9,7 +9,7 @@ This might be a little hard to navigate at first, but just look at the graph and
 
 Welcome to my tiny corner of the web, where I do random knowledge I’ve picked up along the way. Whether you're into coding, physics, or just curious about learning in general, you might enjoy a look around.
 
-This site’s all about **growing ideas** and documenting the stuff I’m working on planning to add music theory, philosophy and more of some linux stuff in general, but I am not ready yet to publish them yet. As of now the content I have added is  here [](.md#Explore%20My%20Notes). 
+This site’s all about **growing ideas** and documenting the stuff I’m working on planning to add music theory, philosophy and more of some linux stuff in general, but I am not ready yet to publish them yet. As of now the content I have added is  here [[Welcome to my Notes#Explore My Notes\|Welcome to my Notes#Explore My Notes]]. 
 
 
 ---
@@ -36,10 +36,10 @@ If you aren't familiar with pkms, here's a good starting point https://www.reddi
 
 ## Explore My Notes
 
-- [Manim](Manim/Manim.md) (Documentation of the library which is famously used by 3b1b)
-- [Classical Mechanics](Classical%20Mechanics/Classical%20Mechanics.md) (welp never knew I would enjoy this)
--  [ML](ML/ML.md) ( machine learning)
-- [VLSI](VLSI/VLSI.md) ( very large scale ~~headache~~ integration)
+- [[Manim/Manim\|Manim]] (Documentation of the library which is famously used by 3b1b)
+- [[Classical Mechanics/Classical Mechanics\|Classical Mechanics]] (welp never knew I would enjoy this)
+-  [[ML/ML\|ML]] ( machine learning)
+- [[VLSI/VLSI\|VLSI]]  ( very large scale ~~headache~~ integration)
 
 ---
 
