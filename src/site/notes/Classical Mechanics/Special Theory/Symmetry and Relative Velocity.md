@@ -15,89 +15,76 @@
     - A moving observer will measure a **stationary rod** to be **shorter** than its proper (rest) length (**length contraction**).
     - A stationary observer will measure a **moving rod** to be shorter than its rest length.
 
+## Time Dilation Derivation
 
-## Time Dilation and Length Contraction Derivation:
+Consider a clock at rest in the $K$ system that produces signals at regular intervals $\Delta t = t(2) - t(1)$.
 
-### Time Dilation Derivation
+An observer in a moving system $K'$ measures a time interval $\Delta t'$ on the same clock using the Lorentz transformation:
 
-**Concept**: Time dilation describes how a moving clock is observed to tick more slowly compared to a stationary clock.
+$$
+t' = \gamma \left( t - \frac{vx_1}{c^2} \right)
+$$
 
-1. Consider a clock at rest in frame $K$ that ticks every $\Delta t$ seconds.
-2. In the stationary frame $K'$, the clock moves with velocity $v$.
-3. During one tick of the clock, light travels a distance $d$ to reflect off a mirror and return:
-   - In the rest frame $K$, the light travels a total distance of $d + d = 2d$.
-   - In frame $K'$, the time taken for the light to travel is $t' = \frac{2d}{c}$.
+For two events happening at the same position $x_1$ in the $K$ system, $x_1(2) = x_1(1)$. Therefore, the time interval measured in $K'$ is given by:
 
-4. The distances are related by the Lorentz transformation:
-   $$ d = vt $$
+$$
+\Delta t' = \gamma \Delta t = \frac{\Delta t}{\sqrt{1 - \frac{v^2}{c^2}}}
+$$
 
-5. The time interval in the stationary frame $K$ is:
-   $$ d = c \Delta t $$
+Thus, the time interval appears longer in the moving frame $K'$, which explains why moving clocks run more slowly compared to clocks at rest in the observer's frame.
 
-6. Substituting these into the distance equation gives:
-   $$ 2d = c \Delta t = v t + vt $$
+## Length Contraction Derivation
 
-7. Solving for $t$ yields:
-   $$ t = \frac{2d}{c} = \frac{2v \Delta t}{c} $$
+Consider a rod of length $L_0$ lying along the $x$-axis of an inertial frame $K$. The observer in system $K'$ moving with uniform speed $v$ along the $x$-axis measures the length of the rod as $L'$ in the moving system $K'$.
 
-8. Now, substituting back:
-   $$ \Delta t' = \frac{2d}{c} = \frac{2vt}{c} = \frac{\Delta t}{\sqrt{1 - \frac{v^2}{c^2}}} $$
+Using the Lorentz transformation:
 
-9. Hence, the time dilation formula is:
-   $$ \Delta t' = \frac{\Delta t}{\sqrt{1 - \frac{v^2}{c^2}}} $$
+$$
+x'(2) - x'(1) = \frac{x_2(2) - x_1(1)}{\sqrt{1 - \frac{v^2}{c^2}}}
+$$
 
----
+where $x_2 - x_1 = L_0$. The length measured in the moving frame is given by:
 
-### Length Contraction Derivation
+$$
+L' = L_0 \sqrt{1 - \frac{v^2}{c^2}}
+$$
 
-**Concept**: Length contraction states that the length of an object moving relative to an observer is measured to be shorter than its proper length.
-
-1. Consider a rod of proper length $L_0$ at rest in frame $K$.
-2. When the rod moves with velocity $v$ relative to an observer in frame $K'$, its endpoints are measured simultaneously in $K'$.
-
-3. Let $x_1$ and $x_2$ be the positions of the endpoints of the rod in frame $K$:
-   $$ L_0 = x_2 - x_1 $$
-
-4. The Lorentz transformation gives the positions in the moving frame $K'$:
-   $$ x_1' = \gamma (x_1 - vt_1) $$
-   $$ x_2' = \gamma (x_2 - vt_2) $$
-
-5. For simultaneous measurements in $K'$ ($t_1 = t_2$), we have:
-   $$ L' = x_2' - x_1' = \gamma (x_2 - vt) - \gamma (x_1 - vt) $$
-
-6. This simplifies to:
-   $$ L' = \gamma (x_2 - x_1) = \gamma L_0 $$
-
-7. Since $\gamma = \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}}$, the length contraction formula becomes:
-   $$ L' = L_0 \sqrt{1 - \frac{v^2}{c^2}} $$
+Thus, the moving rod appears shorter in the frame $K'$ compared to its proper length $L_0$ in the rest frame $K$.
 
 ---
 
-### Derivation of Relative Velocity in the Lorentz Transformation
+### Relative Velocity in Lorentz Transformation
 
-Let's consider a particle with position $ x(t) = u_x t $ moving with velocity $ u_x $ in the $ x $-direction, and apply the Lorentz transformation to calculate its velocity in the $ K' $ frame.
+**Concept**: When a particle moves with velocity $u_x$ in the $K$ frame, we want to find its velocity $u'_x$ in the $K'$ frame, which moves with velocity $v$ relative to $K$.
 
-The Lorentz transformations are given by:
-$$ x' = \gamma (x - v t) $$
+#### Steps:
+1. Consider a particle moving in the $x$-direction with velocity $u_x$ in frame $K$.
+2. Using the Lorentz transformation for position and time:
+
+$$ x' = \gamma (x - vt) $$
 $$ t' = \gamma \left( t - \frac{x v}{c^2} \right) $$
 
-Now, differentiating both equations with respect to time:
+3. To find the velocity in the $K'$ frame, differentiate $x'$ and $t'$ with respect to $t$:
+
 $$ \frac{dx'}{dt} = \gamma \left( \frac{dx}{dt} - v \right) = \gamma ( u_x - v ) $$
 
-For time:
 $$ \frac{dt'}{dt} = \gamma \left( 1 - \frac{u_x v}{c^2} \right) $$
 
-Thus, the relative velocity in the $ K' $ frame becomes:
-$$ u'_x = \frac{u_x - v}{1 - \frac{u_x v}{c^2}} $$
+4. Therefore, the velocity $u'_x$ in the $K'$ frame is:
 
-Similarly, for the $ y $- and $ z $-components of velocity:
+$$ u'_x = \frac{dx'}{dt'} = \frac{u_x - v}{1 - \frac{u_x v}{c^2}} $$
+
+#### For $y$- and $z$-components:
+- The transverse components of velocity transform differently:
+
 $$ u'_y = \frac{u_y}{\gamma \left( 1 - \frac{u_x v}{c^2} \right)} $$
 $$ u'_z = \frac{u_z}{\gamma \left( 1 - \frac{u_x v}{c^2} \right)} $$
 
-Where:
-- $u_x, u_y, u_z$ are the velocity components of the particle in the stationary frame $K$.
-- $u'_x, u'_y, u'_z$ are the velocity components in the moving frame $K'$.
-- $v$ is the relative velocity between frames.
-- $\gamma = \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}}$ is the Lorentz factor.
+#### Conclusion:
+The velocity of the particle in the moving frame $K'$ is related to its velocity in $K$ by:
+
+$$ u'_x = \frac{u_x - v}{1 - \frac{u_x v}{c^2}} $$
 
 ---
+
+
