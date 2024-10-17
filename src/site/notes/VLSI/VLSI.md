@@ -9,3 +9,6 @@
 
 ## Basic Gates
 
+
+[[VLSI/NG-Spice\|NG-Spice]] 
+
