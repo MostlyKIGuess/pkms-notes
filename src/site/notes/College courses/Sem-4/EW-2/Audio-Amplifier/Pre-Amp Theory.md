@@ -77,7 +77,7 @@ Where$A_d$is the differential gain. When$V_{in1} = V_{in2}$, the output will be 
 
 DC analysis determines the operating point values$I_{CQ}$and$V_{CEQ}$. The DC equivalent circuit is obtained by reducing all AC signals to zero.
 
-[![DC Analysis](https://electrosome.com/wp-content/uploads/porto_placeholders/100x95.jpg)](https://electrosome.com/wp-content/uploads/2016/07/Differential-Amplifier-using-Transistors-DC-Analysis.jpg)
+[![DC Analysis](https://electrosome.com/wp-content/uploads/2016/07/Differential-Amplifier-using-Transistors-DC-Analysis.jpg)
 
 Key equations for DC analysis:
 
