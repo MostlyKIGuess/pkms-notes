@@ -12,3 +12,4 @@
 
 [[VLSI/NG-Spice\|NG-Spice]] 
 
+[[VLSI/Euclid's Algorithm\|Euclid's Algorithm]]
