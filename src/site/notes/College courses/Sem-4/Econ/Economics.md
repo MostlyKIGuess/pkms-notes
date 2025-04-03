@@ -11,9 +11,9 @@
 # Schools of Thought
 
 
-![table from reading](/img/user/Pasted image 20250404013806.png)
+![../../../Pasted image 20250404013806.png|table from reading](/img/user/Pasted%20image%2020250404013806.png)
 
-![table from reading](/img/user/Pasted image 20250404013814.png)
+![../../../Pasted image 20250404013814.png|table from reading](/img/user/Pasted%20image%2020250404013814.png)
 
 
 | Perspective                           | Classical                          | Neoclassical                                         | Marxist                                                      | Keynesian                                                                         | Institutionalist                                                   | Behaviouralist                                                 |
@@ -39,7 +39,7 @@
 
 - Supply creates it's own demand.
 
-![say's law](/img/user/Pasted image 20250404001310.png)
+![../../../Pasted image 20250404001310.png|say's law](/img/user/Pasted%20image%2020250404001310.png)
 
 
 
