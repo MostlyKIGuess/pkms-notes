@@ -136,4 +136,4 @@ GDP doesn't fully capture the whole societal well-being that we think it does, h
 
 # Economic Welfare and Understanding
 
-- This will be from [[College courses/Sem-4/Econ/Employment and Unemployment\|Employment and Unemployment]] go shu shu.
+- This will be from [[College courses/Sem-4/Econ/Employment,Unemployment,Inflation,Fiscal,Structural Transformation\|Employment,Unemployment,Inflation,Fiscal,Structural Transformation]] go shu shu.
