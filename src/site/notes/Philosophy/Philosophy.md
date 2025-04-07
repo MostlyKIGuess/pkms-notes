@@ -7,9 +7,7 @@
 
 - Not see philosophy as itself, see it as how it interconnects with other social sciences
 - Philosophy = love + wisdom.
-  - The roots of "philosophy" lie in the Greek words _philos_ (love) and _sophia_ (wisdom). Th
-    ink ancient Greek thinkers seeking to understand the universe and human existence through r
-    easoned inquiry. The concept's origins are deeply embedded in Greek philosophy's history.
+  - The roots of "philosophy" lie in the Greek words _philos_ (love) and _sophia_ (wisdom). Think ancient Greek thinkers seeking to understand the universe and human existence through reasoned inquiry. The concept's origins are deeply embedded in Greek philosophy's history.
 - Philosophy is categorized as a second order discipline. ( we think about how we think )
 - Bread and butter of philosophy is argument, how do you come to an conclusion through an argument
 
@@ -74,3 +72,17 @@
 - Where x = law, economics, history, society, technology, politics, sport, etc.
 - Examples: Questioning whether AI can have rights (philosophy of technology), examining what makes laws just (philosophy of law), or analyzing if markets should be completely free (philosophy of economics).
 - Applies philosophical thinking to specific domains of human activity.
+
+## What concerns Philosophy?
+
+- Questions that science can not answer.
+- Questions that involve justification of claims we make.
+- Analysis of concepts
+- Normative questions
+
+## Why Philosophy?
+
+- Clarity of thought
+- Realize _what it is that we don't know_
+- More comprehension of the world.
+- Curiosity for various domains of knowledge and see how they hand together.
