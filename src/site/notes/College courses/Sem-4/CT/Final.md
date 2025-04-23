@@ -2,7 +2,7 @@
 {"dg-publish":true,"permalink":"/college-courses/sem-4/ct/final/"}
 ---
 
-![][final.pdf]
+![][./final.pdf]
 # Chapter 1: Introduction
 
 ## Basic Communication System
