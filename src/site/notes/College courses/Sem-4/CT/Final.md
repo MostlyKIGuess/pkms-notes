@@ -313,7 +313,7 @@
 
 ### Bandwidth and Power Efficiency (Orthogonal)
 *   **Bandwidth:** Coherent requires $BW \approx M/(2T)$; Non-coherent requires $BW \approx M/T$.
-*   **Bandwidth Efficiency:** $\eta_B = (\log_2 M) / (\text{Dimensions})$. Coherent uses $M/2$ complex dimensions ($\eta_B \approx 2(\log_2 M)/M$); Non-coherent uses $M$ complex dimensions ($\eta_B \approx (\log_2 M)/M$). Both $\to 0$ as $M \to \infty$. (Slide 408)
+*   **Bandwidth Efficiency:** $\eta_B = (\log_2 M) / (\text{Dimensions})$. Coherent uses $M/2$ complex dimensions ($\eta_B \approx (\log_2 2M)/M$); Non-coherent uses $M$ complex dimensions ($\eta_B \approx (\log_2 M)/M$). Both $\to 0$ as $M \to \infty$. (Slide 408)
 *   **Power Efficiency (Asymptotic):** M-ary orthogonal signaling achieves the best possible power efficiency ($E_b/N_0 \to \ln 2 \approx -1.6$ dB) as $M \to \infty$. (See Chapter 6 discussion).
 
 ## Biorthogonal Modulation (Sec 4.4)
