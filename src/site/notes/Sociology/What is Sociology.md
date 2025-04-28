@@ -82,3 +82,5 @@ _“Neither the life of an individual nor the history of a society can be unders
 
 [[Sociology/Development of Modern , Academic Sociology\|Development of Modern , Academic Sociology]]
 
+[[Sociology/Invitation to Sociology-Peter Bhai\|Invitation to Sociology-Peter Bhai]]
+

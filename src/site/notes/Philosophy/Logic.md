@@ -6,7 +6,7 @@
 # What is Logic ?
 
 - The study of rational argumentation.
-
+- The study of the methods and principles used to distinguish correct from incorrect reasoning.
 ## Purpose
 
 - identify and understand the difference between good and bad arguments
