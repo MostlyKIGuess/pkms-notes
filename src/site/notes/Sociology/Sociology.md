@@ -15,11 +15,10 @@
 # Different Views on Sociology
 ## Marx?
 [[Sociology/Marxist View on Sociology\|Marxist View on Sociology]]
-
 ## Weber
-[[Sociology/Solarity and Weber\|Solarity and Weber]]
+[[Sociology/Social Action, Protestant ethic & the spirit of Capitalism - Weber\|Social Action, Protestant ethic & the spirit of Capitalism - Weber]]
 ## Emile
-[[Sociology/Emile Protestant Ethic\|Emile Protestant Ethic]]
+[[Sociology/Emile , Social Solidarity\|Emile , Social Solidarity]]
 
 
 PS: I haven't written Sociology by myself ( just checked through so , this will feel AI generated but had to find something to read :Pray: )
