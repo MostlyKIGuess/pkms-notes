@@ -17,11 +17,9 @@
 [[Sociology/Marxist View on Sociology\|Marxist View on Sociology]]
 
 ## Weber
-
+[[Sociology/Solarity and Weber\|Solarity and Weber]]
 ## Emile
+[[Sociology/Emile Protestant Ethic\|Emile Protestant Ethic]]
 
 
- 
-
-
-
+PS: I haven't written Sociology by myself ( just checked through so , this will feel AI generated but had to find something to read :Pray: )
