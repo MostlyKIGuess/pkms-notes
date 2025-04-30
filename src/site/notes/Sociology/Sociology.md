@@ -22,3 +22,5 @@
 
 
 PS: I haven't written Sociology by myself ( just checked through so , this will feel AI generated but had to find something to read :Pray: )
+
+
