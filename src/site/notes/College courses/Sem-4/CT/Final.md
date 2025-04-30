@@ -2,6 +2,101 @@
 {"dg-publish":true,"permalink":"/college-courses/sem-4/ct/final/"}
 ---
 
+# Optimal Demodulation & Performance
+
+this is first coz i forget lol
+
+
+## Signal Space and AWGN Model
+*   **Core Idea:** Represent $M$ possible transmitted continuous-time signals $s_i(t)$ as vectors $\mathbf{s}_i$ in an $n$-dimensional signal space ($n \le M$).
+*   **AWGN Channel Model (Vector Form):** The received vector $\mathbf{Y}$ when signal $\mathbf{s}_i$ is sent is:
+    $$ \mathbf{Y} = \mathbf{s}_i + \mathbf{N} $$
+    *   $\mathbf{N}$ is the noise vector. Its components $N[k]$ are i.i.d. Gaussian $N(0, \sigma^2)$.
+    *   The noise variance per real dimension is related to the physical noise PSD $N_0$ by $\sigma^2 = N_0/2$.
+
+## Optimal Decision Rules (Minimizing Probability of Error)
+*   **MAP (Maximum A Posteriori) Rule:** Optimal overall. Requires prior probabilities $\pi_i = P(H_i)$. Choose hypothesis $i$ that maximizes the posterior probability $P(H_i | \mathbf{y})$.
+    *   **Decision Metric (Equivalent):** Choose $i$ that maximizes:
+        $$ \Lambda_{MAP}(i) = \langle \mathbf{y}, \mathbf{s}_i \rangle - \frac{1}{2}\|\mathbf{s}_i\|^2 + \sigma^2 \ln(\pi_i) $$
+    *   **Vector Form:** Choose $i$ that minimizes:
+        $$ d_{MAP}^2(i) = \|\mathbf{y} - \mathbf{s}_i\|^2 - 2\sigma^2 \ln(\pi_i) $$
+*   **ML (Maximum Likelihood) Rule:** Optimal when priors $\pi_i = 1/M$ are equal. Chooses hypothesis $i$ that maximizes the likelihood $p(\mathbf{y}|H_i)$.
+    *   **Decision Metric (Equivalent):** Choose $i$ that maximizes:
+        $$ \Lambda_{ML}(i) = \langle \mathbf{y}, \mathbf{s}_i \rangle - \frac{1}{2}\|\mathbf{s}_i\|^2 $$
+    *   **Vector Form (Minimum Distance Rule):** Choose $i$ that minimizes:
+        $$ d_{ML}^2(i) = \|\mathbf{y} - \mathbf{s}_i\|^2 $$
+*   **Implementation:** Using a bank of correlators (computing $\langle y, s_i \rangle$) or matched filters (output sampled at peak = $\langle y, s_i \rangle$).
+
+## Performance Metrics: Geometry and SNR
+
+### Euclidean Distance
+*   The distance between signal points in the constellation is crucial for performance.
+    $$ d_{ij} = \|\mathbf{s}_i - \mathbf{s}_j\| $$
+*   **Minimum Distance ($d_{min}$):** The smallest distance between any two distinct constellation points. Often dominates performance at high SNR.
+    $$ d_{min} = \min_{i \neq j} \{d_{ij}\} $$
+
+### Energy per Bit ($E_b$)
+*   Relates average signal energy to the information transmitted.
+*   Average Energy per Symbol: $E_s = \frac{1}{M} \sum_{i=0}^{M-1} \|\mathbf{s}_i\|^2$ (assuming equal priors).
+*   Energy per Bit:
+    $$ E_b = \frac{E_s}{\log_2 M} $$
+    *   $E_b$ represents the energy required *per information bit*.
+
+### Noise Power Spectral Density ($N_0$)
+*   Fundamental measure of noise level (power per Hz, one-sided). Directly related to noise variance per dimension: $\sigma^2 = N_0/2$.
+
+### Q-Function
+*   Tail probability of a standard Normal distribution $N(0,1)$. Used to express error probabilities involving Gaussian noise.
+    $$ Q(x) = \int_x^\infty \frac{1}{\sqrt{2\pi}} e^{-u^2/2} du = \frac{1}{2}\text{erfc}\left(\frac{x}{\sqrt{2}}\right) $$
+
+## Performance Formulas (ML, Equal Priors)
+
+### Pairwise Error Probability (PEP)
+*   The probability of deciding $\mathbf{s}_j$ when $\mathbf{s}_i$ was sent, assuming only these two possibilities exist.
+    $$ P(\mathbf{s}_i \rightarrow \mathbf{s}_j) = Q\left(\frac{d_{ij}}{2\sigma}\right) = Q\left(\frac{d_{ij}}{\sqrt{2N_0}}\right) $$
+
+### Binary Signaling Error Probability ($M=2$)
+*   Directly uses the pairwise error probability with $d = d_{01}$.
+    $$ P_e = Q\left(\frac{d}{\sqrt{2N_0}}\right) $$
+
+### M-ary Symbol Error Rate (SER, $P_e$) - Approximations
+*   Exact calculation is complex. Bounds and approximations are used.
+*   **Union Bound:** Upper bounds the probability of error by summing PEPs.
+    $$ P_{e|i} \le \sum_{j \neq i} Q\left(\frac{d_{ij}}{\sqrt{2N_0}}\right) $$
+    *   Average SER: $P_e = \sum_i \pi_i P_{e|i} \le \sum_i \pi_i \sum_{j \neq i} Q\left(\frac{d_{ij}}{\sqrt{2N_0}}\right)$
+*   **Nearest Neighbor Approximation (High SNR):** Assumes errors are dominated by mistaking a signal for one of its nearest neighbors at distance $d_{min}$.
+    $$ P_e \approx \bar{N}_{min} Q\left(\frac{d_{min}}{\sqrt{2N_0}}\right) $$
+    *   $\bar{N}_{min}$: Average number of nearest neighbors at distance $d_{min}$.
+
+## Efficiency Metrics
+
+### Power Efficiency ($\eta_P$)
+*   **Concept:** How effectively does the constellation use energy to create distance between points? A measure of noise immunity for a given $E_b$. Often implicitly compares to BPSK.
+*   **Formal Definition (Binary Context):** For binary signaling, we related $P_e$ to $\eta_P$:
+    $$ P_e = Q\left(\sqrt{\frac{2 \eta_P E_b}{N_0}}\right) \quad \text{where } \eta_P = \frac{d^2}{4E_b} $$
+    *   For antipodal BPSK, $\eta_P = 1$. For orthogonal/OOK, $\eta_P = 1/2$.
+*   **M-ary Context:** Instead of defining a single $\eta_P$, performance is typically analyzed via $d_{min}$ and $E_b$. The quantity $\frac{d_{min}^2}{E_b}$ acts as a **figure of merit for power efficiency** when comparing constellations (higher is better). It tells us how much squared minimum distance we get per unit of energy-per-bit.
+    *   From the NN approx: $P_e \approx \bar{N}_{min} Q\left(\sqrt{\frac{d_{min}^2/E_b}{2N_0/E_b}} \times \frac{E_b}{N_0}\right) \approx \bar{N}_{min} Q\left(\sqrt{\frac{d_{min}^2}{E_b} \frac{E_b}{2N_0}}\right)$.
+    *   For high SNR, the argument of the Q-function dominates. Larger $d_{min}^2/E_b$ leads to smaller $P_e$ for the same $E_b/N_0$.
+
+### Bandwidth Efficiency ($\eta_B$)
+*   **Concept:** How many bits are sent per second per Hertz of bandwidth?
+*   **Formula (using Nyquist minimum bandwidth $B_{min}=R_s/2 = 1/(2T)$ for complex signals):**
+    $$ \eta_B = \frac{R_b}{B_{min}} = \frac{(\log_2 M)/T}{1/(2T)} = 2 \log_2 M \quad (\text{bits/sec/Hz, complex/2D)} $$
+    *   For real baseband (1D): $\eta_B = \log_2 M$.
+    *   If excess bandwidth $\alpha$ is used: $B = (1+\alpha)B_{min}$, so $\eta_B = \frac{2 \log_2 M}{1+\alpha}$ (complex).
+
+## Linkages and Tradeoffs
+*   **Pe vs. Geometry & SNR:** The error probability $P_e$ fundamentally depends on the ratio of minimum distance ($d_{min}$) to noise standard deviation ($\sigma = \sqrt{N_0/2}$).
+    $$ P_e \approx \bar{N}_{min} Q\left(\frac{d_{min}}{\sqrt{2N_0}}\right) $$
+*   **Pe vs. $E_b/N_0$:** We typically express performance as $P_e$ vs. $E_b/N_0$. The relationship involves the constellation geometry via $d_{min}^2/E_b$:
+    $$ \frac{d_{min}}{\sqrt{2N_0}} = \sqrt{\frac{d_{min}^2}{2N_0}} = \sqrt{\frac{d_{min}^2}{E_b} \frac{E_b}{2N_0}} $$
+    *   A constellation with a higher $d_{min}^2/E_b$ (better power efficiency) will achieve a lower $P_e$ for the same $E_b/N_0$.
+*   **Power-Bandwidth Tradeoff:**
+    *   Increasing constellation size $M$ generally **increases bandwidth efficiency** ($\eta_B$).
+    *   Increasing constellation size $M$ (for PAM, PSK, QAM) generally **decreases power efficiency** (reduces $d_{min}^2/E_b$) because points are packed closer for the same average energy $E_s$.
+    *   Orthogonal signaling is an exception (power efficiency improves with M, bandwidth efficiency decreases).
+
 
 # Analog Modulation 
 
