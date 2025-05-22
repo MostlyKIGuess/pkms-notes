@@ -124,6 +124,27 @@ For example, the word "unhappiness" might be tokenized as "un", "happi", and "ne
 
 ## Knowledge of Self
 
+- Can be given as the "SYSTEM_PROMPT".
+- Basically by itself the model doesn't know what it is, so highly probably is that it would spit / hallucinate that I am developed by openAI or something like that , that doesn't mean that someone stole openAI's model and used it, or their data, it's just generating the most probable answer it knows.
+
+# Post-Training
+
+## SFT ( Supervised Fine Tuning )
+
+- So all these stuff we discussed above is basically about hallucinations and adding instruct datasets, it's supervised fine tuning.
+- It teaches how to follow instructions using the labeled data.
+
+## RLHF ( Reinforcement Learning from Human Feedback )
+
+- This is what we discussed on the [[LLMs/LLM Understanding#How to reduce hallucinations?\|LLM Understanding#How to reduce hallucinations?]], as by showing the model to answer I don't know.
+- Reinforce what good behavior is and what bad behavior is.
+
+## DPO (Direct Preference Optimization)
+
+- Newer method of RLHF. You make the model choose between two outputs and then you train it to choose the better one. (this is why chatgpt asks you which preference you like better)
+- More stable and less expensive than RLHF.
+- well gets around the same results or better.
+
 # Transformer related Stuff
 
 ![Pasted image 20250522143616.png](/img/user/LLMs/Pasted%20image%2020250522143616.png)
@@ -203,4 +224,3 @@ Where:
 - UltraChat Atlas.
 
 ![LLM-Deep-Dive.png](/img/user/LLMs/LLM-Deep-Dive.png)
-
