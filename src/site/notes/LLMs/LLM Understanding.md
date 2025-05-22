@@ -5,7 +5,7 @@
 
 Sources:
 - Taken from Andrej Karapathy (_the goat_) deep dive into LLMs.
-- [[LLM-Deep-Dive.excalidraw]]
+ ![[LLM-Deep-Dive.excalidraw]]
 
 My Notes:
 
