@@ -10,3 +10,6 @@ This will be divided into subsections just like those parts :pensive: we made.
 [[ML/Supervised Learning\|Supervised Learning]]
 
 [[ML/Generalized Linear Models\|Generalized Linear Models]]
+
+[[ML/Neural Networks\|Neural Networks]]
+
