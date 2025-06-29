@@ -63,5 +63,25 @@ Features are first extracted from input images then those are used to build a 4D
 
 - Optical Flow can be modeled as a function of depth and camera poses. 
 - [[Research/Optical Flow Model\|Optical Flow Model]]
-- 
+
+
+# Estimating Pose and Depth from Optical Flow
+
+- So now assuming you went through the Optical Flow model, we will try to find T and d from optical flow. Just reversing the Optical Flow problem.
+![Pasted image 20250628231851.png](/img/user/Research/Pasted%20image%2020250628231851.png)
+
+> SO WHAT IS A FACTOR GRAPH? 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/uuiaqGLFYa4?si=DXFwJFe6GrXxA10k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+[[Research/Curve Fitting\|Curve Fitting]]
+
+
+# Differentiable Bndle Adjustment and DROID-SLAM
+
+## DROID-SLAM
+
+![Pasted image 20250629161428.png](/img/user/Research/Pasted%20image%2020250629161428.png)
+
+
 
