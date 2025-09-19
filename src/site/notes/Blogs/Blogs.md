@@ -10,5 +10,7 @@ Well not many blogs are written but here are few.
 [[Blogs/Absurrd\|Absurrd]]
 [[Blogs/Right Person, Wrong Time\|Right Person, Wrong Time]]
 [[Blogs/Perfectionism enough?\|Perfectionism enough?]]
+[[Blogs/Simple Things Draft\|Simple Things Draft]]
+
 
 
