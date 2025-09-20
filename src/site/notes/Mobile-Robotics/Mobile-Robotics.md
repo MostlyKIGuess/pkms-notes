@@ -5,7 +5,7 @@
 Note to myself:
 Before learning anything, get your LA right. 
 
-Read the following with a caution, ofcourse it's proof read but not like my other blogs, because of less time, blogs that relied on using generative AI to write latex will have a note saying , "AI AI CAPTAIN".
+Read this with some caution. It’s proofread, but not as polished as my usual blogs. When I’ve used a lot of generative AI to handle content, you’ll see a note saying, 'AI AI CAPTAIN'.
 
 
 # Transformations
