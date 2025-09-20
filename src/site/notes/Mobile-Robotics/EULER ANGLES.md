@@ -61,7 +61,6 @@ Because of this, there are many different Euler angle conventions (e.g., ZYX, ZY
 
 ![[RotationAboutArbAxis.pdf]]
 
-====
 
 </div></div>
 

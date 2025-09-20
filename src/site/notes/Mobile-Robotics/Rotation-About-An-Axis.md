@@ -4,5 +4,3 @@
 
 
 ![[RotationAboutArbAxis.pdf]]
-
-====
