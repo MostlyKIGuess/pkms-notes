@@ -16,8 +16,9 @@ The core idea is to break down any complex 3D rotation into a sequence of three 
 -   **Pitch**: Rotation around the body's side-to-side axis (often the Y-axis).
 -   **Yaw**: Rotation around the body's vertical axis (often the Z-axis).
 
-YESS, after _months_ of not being able to remember this, I have found a very trivial way to remember this, imagine this airplane and hold think you are an army man , make a gun with your left hand, now your pinky is pointing outwards, great this is step 1.
-I would assume you are a normal person and point your thumb to the top, now your middle finger can take a 90 degree from the index finger.
+YESS, after _months_ of not being able to remember this, 
+I have found a very trivial way to remember this, imagine this airplane and stand on it thinking you are an army man , what I want you to do now is make a gun with your left hand, now your index finger is pointing outwards -- great,  this is step 1.
+I would assume you are a normal person and point your thumb to the top, now your middle finger can go 90 degree from the index finger.
 
 What you have now is exactly the Roll, Pitch, Yaw you wanted from the below image, just exactly in the opposite direction. 
 

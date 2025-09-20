@@ -3,7 +3,7 @@
 ---
 
 - Basics of running manim:
-   - If you have installed it , then make sure you have the community version which currently is the v$0.18.0$ , and so basically what we will be doing is creating classes, and there are different type of [[Manim/Scenes in Manim\|Scenes in Manim]]  we will go there but later.., now we will just use Scene.
+   - If you have installed it , then make sure you have the community version which currently is the v$0.19.0$ , and so basically what we will be doing is creating classes, and there are different type of [[Manim/Scenes in Manim\|Scenes in Manim]]  we will go there but later.., now we will just use Scene.
    - Now manim has something called self which method we will use to create animation in the videos.
    - So something like this, your code would look like:
    ```python

@@ -193,3 +193,20 @@ The update then becomes a simple addition:
 $$ l_t(m_i) = l_{t-1}(m_i) + l_{inverse\_sensor\_model} $$
 
 Here, $l_{inverse\_sensor\_model}$ is a pre-calculated log-odds value based on the sensor model. A positive value increases the belief of occupancy (e.g., for the cell where the beam ends), and a negative value increases the belief of the cell being free (for cells the beam passes through). This avoids costly multiplications and makes the map update very fast.
+
+
+
+#### Probabilistic Map Update (Deeper Dive)
+
+The occupancy of each voxel in a grid, $m_i$, is updated using a recursive binary **Bayes filter**. The belief $Bel(m_i)$ is updated based on a new measurement $z_t$.
+
+The update rule in log-odds form is efficient and avoids numerical instability near probabilities of 0 or 1.
+
+$$ l_t(m_i) = l_{t-1}(m_i) + l_{inverse\_sensor\_model} $$
+
+* *Clamping Policy*: To prevent probabilities from becoming permanently fixed at 0 or 1 (making them impossible to update later), a clamping policy is often used. This keeps the log-odds value within a certain range, for example, $l(m_i) \in [l_{min}, l_{max}]$. This ensures the map can adapt to dynamic changes in the environment.
+
+* *Multi-Resolution Queries*: In hierarchical structures like OctoMaps, the belief of a parent node (a larger voxel) can be quickly determined from its children. A common approach is to set the parent's occupancy to the maximum occupancy value of its eight children. This allows for fast queries at different levels of detail.
+
+    $$ Bel(n_{parent}) = \max_{i=1...8} Bel(n_{child_i}) $$
+

@@ -7,16 +7,14 @@ This might be a little hard to navigate at first, but just look at the graph and
 
 Welcome to my tiny corner of the web, where I do random knowledge I’ve picked up along the way. Whether you're into coding, physics, or just curious about learning in general, you might enjoy a look around.
 
-This site’s all about **growing ideas** and documenting the stuff I’m working on planning to add music theory, philosophy and more of some linux stuff in general, but I am not ready yet to publish them yet. As of now the content I have added is  here [[Welcome to my Notes#Explore My Notes\|Welcome to my Notes#Explore My Notes]].
-
----
+This site’s all about *growing ideas* (to cringe on them later on) and documenting the stuff I’m working on , I am planning to add music theory, philosophy and more of some linux stuff in general, but I am not ready yet to publish them yet. As of now the content I have added is  here [[Welcome to my Notes#Explore My Notes\|Welcome to my Notes#Explore My Notes]].
 
 ## Explore My Notes
 
 - [[Blogs/Blogs\|Blogs]] ( Well, blogs, I stopped reading and writing, so don't expect much)
 - [[Manim/Manim\|Manim]] (Documentation of the library which is famously used by 3b1b)
 - [[Classical Mechanics/Classical Mechanics\|Classical Mechanics]] (welp never knew I would enjoy this)
-- [[ML/ML\|ML]] ( machine learning)
+- [[ML/ML\|ML]] ( machine learning, idk jackshit why would anyone click here)
 - [[VLSI/VLSI\|VLSI]]  ( very large scale ~~headache~~ integration)
 - [[Classical Mechanics/Classical Mechanics\|Classical Mechanics]] ( This leads to a good rabbit hole in natural science which is so out of the whole site, COZ IT WAS A FORCED COURSE, _sigh_ , it was interesting although )
 - [[College courses/Sem-4/Econ/Economics\|Economics]] ( fun basics , although you are better of reading Freakonomist or The User's Guide to Economics )
@@ -25,11 +23,7 @@ This site’s all about **growing ideas** and documenting the stuff I’m workin
 - [[Movies/Movies\|Movies]] ( I started this very recently and am not gonna finish it lmao)
 Then there's random stuff on Interesting folder which isn't organized but welp have fun. [[Interesting/Docker <3\|Docker <3]] , [[Interesting/PSD\|PSD]] , etc.
 
----
-
 This site is constantly growing as I learn more, so check back for updates. If you have any suggestions or want to discuss anything, feel free to reach out. Mail is there on the bottom right
-
-----
 
 ## What's This Site For?
 
@@ -38,13 +32,6 @@ Think of it as a personal collection of notes and docs. Instead of letting every
 If you aren't familiar with pkms, here's a good starting point <https://www.reddit.com/r/PKMS/> .
 
 ---
-
-## Tips & Tricks
-
-1. **Graph View**: Use the graph view to get a visual overview of how all the topics and notes are connected. It helps you see the relationships between concepts and ideas.
-2. **Dark Mode**: Prefer working at night? You can switch to dark mode anytime for a more comfortable reading experience.
-3. **Quick Search (Ctrl + K)**: If you’re looking for something specific, use `Ctrl + K` to open the search bar and find any page or note quickly.
-
 ## Personal Interest/Things
 
 You might wanna do a YLYL, so enjoy

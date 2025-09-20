@@ -17,4 +17,11 @@ Read the following with a caution, ofcourse it's proof read but not like my othe
 # Mapping
 
 - [[Mobile-Robotics/Mapping and 3D Representation\|Mapping and 3D Representation]]
-- 
+
+# Optimization
+- [[Mobile-Robotics/NLS\|NLS]]
+
+# ICP
+
+- [[Mobile-Robotics/ICP\|ICP]]
+
