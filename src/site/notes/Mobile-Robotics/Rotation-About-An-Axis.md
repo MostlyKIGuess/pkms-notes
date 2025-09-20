@@ -3,4 +3,6 @@
 ---
 
 
-![[RotationAboutArbAxis.pdf]]
+
+
+<iframe src="/img/user/Mobile-Robotics/RotationAboutArbAxis.pdf" width="100%" height="600px" title="RotationAboutArbAxis.pdf" style="border:1px solid #ccc;"></iframe>

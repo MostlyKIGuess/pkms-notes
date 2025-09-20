@@ -59,7 +59,9 @@ Because of this, there are many different Euler angle conventions (e.g., ZYX, ZY
 
 
 
-![[RotationAboutArbAxis.pdf]]
+
+
+<iframe src="/img/user/Mobile-Robotics/RotationAboutArbAxis.pdf" width="100%" height="600px" title="RotationAboutArbAxis.pdf" style="border:1px solid #ccc;"></iframe>
 
 
 </div></div>
@@ -70,7 +72,7 @@ Because of this, there are many different Euler angle conventions (e.g., ZYX, ZY
 The biggest skill issue of  Euler angles is a phenomenon called *Gimbal Lock*. 
 This is a critical failure case where you effectively lose one of your three degrees of rotational freedom.
 
-![[ch_gimballock.pdf]]
+<iframe src="/img/user/Mobile-Robotics/ch_gimballock.pdf" width="100%" height="600px" title="ch_gimballock.pdf" style="border:1px solid #ccc;"></iframe>
 
 Gimbal lock occurs when the axes of two of the three gimbals align, this typically happens when the pitch angle is $\pm90^{\circ}$.
 
