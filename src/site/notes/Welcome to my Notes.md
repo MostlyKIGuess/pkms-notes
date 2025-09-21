@@ -13,6 +13,7 @@ This site’s all about *growing ideas* (to cringe on them later on) and documen
 
 - [[Blogs/Blogs\|Blogs]] ( Well, blogs, I stopped reading and writing, so don't expect much)
 - [[Manim/Manim\|Manim]] (Documentation of the library which is famously used by 3b1b)
+- [[Mobile-Robotics/Mobile-Robotics\|Mobile-Robotics]] ( By far the most fun thing I have done, I love this field)
 - [[Classical Mechanics/Classical Mechanics\|Classical Mechanics]] (welp never knew I would enjoy this)
 - [[ML/ML\|ML]] ( machine learning, idk jackshit why would anyone click here)
 - [[VLSI/VLSI\|VLSI]]  ( very large scale ~~headache~~ integration)
