@@ -4,7 +4,7 @@
 
 # Iterative Closest Point (ICP) Algorithm
 
-### *Point Cloud Registration*
+### Point Cloud Registration
 
 Point cloud registration is the process of aligning two or more 3D point clouds of the same scene that have been captured from different viewpoints. Given a *source* point cloud, which we can call $P_{s'}$, and a *target* point cloud, $P_s$, the goal is to find the optimal rigid body transformation that best aligns $P_{s'}$ with $P_s$. This transformation consists of a rotation matrix, $R$, and a translation vector, $t$.
 
@@ -96,3 +96,4 @@ fir kabhi 🙏🏻🙏🏻🙏🏻🙏🏻
 
 [[Mobile-Robotics/ICP-SLAM\|ICP-SLAM]]
 
+**

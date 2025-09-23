@@ -13,6 +13,8 @@ Read this with some caution. It’s proofread, but not as polished as my usual b
 - [[Mobile-Robotics/EULER ANGLES\|EULER ANGLES]]
 - [[Mobile-Robotics/Rotation-About-An-Axis\|Rotation-About-An-Axis]]
 - [[Mobile-Robotics/Quaternions\|Quaternions]]
+- [[Mobile-Robotics/Papa, Where do I multiply? Left or Right\|Papa, Where do I multiply? Left or Right]]
+
 
 # Mapping
 

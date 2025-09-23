@@ -141,7 +141,7 @@ The final coordinates of the point are $(13, 3, 3)$.
 
 ### Singularities in Orientation: Gimbal Lock
 
-While representing orientation with a sequence of three rotations (*Euler angles*) is intuitive, it suffers from a critical problem known as *gimbal lock*. This is a *singularity* where the alignment of two rotation axes causes the loss of one degree of rotational freedom. I cover this in more detail in my `[[EULER ANGLES]]` note.
+While representing orientation with a sequence of three rotations (*Euler angles*) is intuitive, it suffers from a critical problem known as *gimbal lock*. This is a *singularity* where the alignment of two rotation axes causes the loss of one degree of rotational freedom. I cover this in more detail in my [[Mobile-Robotics/EULER ANGLES\|EULER ANGLES]] note.
 
 Let's examine the mathematical reason for this. Consider a ZYX roll-pitch-yaw convention. The final rotation is $R = R_z(y) R_y(p) R_x(r)$. If the pitch angle $p$ is set to $\pi/2$:
 $$R_y(\pi/2) = \begin{bmatrix} 0 & 0 & 1 \\ 0 & 1 & 0 \\ -1 & 0 & 0 \end{bmatrix}$$
