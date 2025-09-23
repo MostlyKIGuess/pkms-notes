@@ -5,7 +5,7 @@
 
 # Forward and Inverse Kinematics
 
-This note covers the core kinematic problems for manipulators. *Forward Kinematics (FK)* is the process of calculating the end-effector's position and orientation from a given set of joint angles. *Inverse Kinematics (IK)* is the reverse and more challenging problem of finding the required joint angles to place the end-effector at a desired pose. These calculations rely heavily on the principles of `[[Co-ordinate-Transforms]]`.
+This note covers the core kinematic problems for manipulators. *Forward Kinematics (FK)* is the process of calculating the end-effector's position and orientation from a given set of joint angles. *Inverse Kinematics (IK)* is the reverse and more challenging problem of finding the required joint angles to place the end-effector at a desired pose. These calculations rely heavily on the principles of [[Mobile-Robotics/Co-ordinate-Transforms\|Co-ordinate-Transforms]].
 
 
 
@@ -24,7 +24,7 @@ $$T_{WE} = (R(\theta_1) \cdot \text{Trans}(L_1, 0)) \cdot (R(\theta_2) \cdot \te
 Multiplying the homogeneous matrices gives us the final end-effector position equations:
 $$x_E = L_1 \cos\theta_1 + L_2 \cos(\theta_1 + \theta_2)$$
 $$y_E = L_1 \sin\theta_1 + L_2 \sin(\theta_1 + \theta_2)$$
-The final orientation of the end-effector is the sum of the joint angles, $\theta_1 + \theta_2$. This orientation can be represented in various ways, as detailed in my notes on `[[Mobile-Robotics/EULER ANGLES\|EULER ANGLES]]` and `[[Quaternions]]`.
+The final orientation of the end-effector is the sum of the joint angles, $\theta_1 + \theta_2$. This orientation can be represented in various ways, check [[Mobile-Robotics/EULER ANGLES\|EULER ANGLES]] and [[Mobile-Robotics/Quaternions\|Quaternions]].
 
 ### The Denavit-Hartenberg (DH) Convention
 For more complex 3D manipulators, creating these transformations manually can be error-prone. The *Denavit-Hartenberg (DH) convention* provides a standardized, systematic method for assigning coordinate frames to each link and defining the transformation between them using just four parameters. This makes the FK problem much more manageable.
@@ -62,9 +62,7 @@ By squaring and adding these two equations and simplifying with trigonometric id
 ### Numerical IK Solutions
 For manipulators with more joints, an analytical solution is often impossible. In these cases, we rely on iterative numerical methods to find an answer. These methods start with an initial guess for the joint angles and iteratively refine it to minimize the error between the current end-effector pose and the desired pose.
 
-This turns the IK problem into a root-finding or optimization problem. The methods used are forms of non-linear optimization, a topic I cover in more detail in my `[[NLS]]` note.
-
----
+This turns the IK problem into a root-finding or optimization problem. The methods used are forms of non-linear optimization, this is present in [[Mobile-Robotics/NLS\|NLS]].
 
 ### Velocities and the Jacobian
 
@@ -81,4 +79,4 @@ A manipulator is in a *singularity* when the Jacobian matrix loses rank and cann
 
 This happens when the determinant of the Jacobian is zero. For the 2R arm, the determinant is $det(J) = L_1 L_2 \sin\theta_2$. This becomes zero when $\sin\theta_2=0$, which occurs when $\theta_2 = 0$ or $\theta_2 = \pi$. Geometrically, this is when the arm is fully stretched out or folded back on itself.
 
-This concept is directly analogous to the problem of Gimbal Lock in [[EULER ANGLES]] note, which is a singularity in an orientation representation.
+This concept is directly analogous to the problem of Gimbal Lock in [[Mobile-Robotics/EULER ANGLES\|EULER ANGLES]] note, which is a singularity in an orientation representation.
