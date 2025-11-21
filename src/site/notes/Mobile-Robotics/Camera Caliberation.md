@@ -1,0 +1,167 @@
+---
+{"dg-publish":true,"permalink":"/mobile-robotics/camera-caliberation/"}
+---
+
+
+
+
+$$\lambda  \begin{bmatrix} u \\ v \\ 1 \end{bmatrix} = K [R|t] \begin{bmatrix} X_w \\ Y_w \\ Z_w \\ 1 \end{bmatrix} $$
+
+$$\lambda  \begin{bmatrix} u \\ v \\ 1 \end{bmatrix} = P\begin{bmatrix} X_w \\ Y_w \\ Z_w \\ 1 \end{bmatrix} $$
+
+Here, P is the Projection Matrix that combines both Intrinsic and Extrinsic Parameters. 
+Now remember that this is _homogeneous_ coordinates, so to get the actual pixel coordinates.
+So $\lambda x = x$, so let's say you want to solve for P.
+
+Because every $X_{w} \iff x_c$ we get 2 equation each for x and y component in the Image. 
+
+So, we need 6 points to solve for the 11 unknowns in P (since it's up to scale). _11 only because  for eg: $P_{34} = 1$, we can get away, let's do math we will reach this conclusion after writing 3-4 equations:_
+
+$$x_{i} = P_{11}X_{i} + P_{12}Y_{i} + P_{13}Z_{i} + P_{14}$$
+$$y_{i} = P_{21}X_{i} + P_{22}Y_{i} + P_{23}Z_{i} + P_{24}$$
+$$z_{i} = P_{31}X_{i} + P_{32}Y_{i} + P_{33}Z_{i} + P_{34}$$
+
+Dividing by $z_{i}$: 
+$$ \frac{x_i}{z_{i}} = x_{i} , \frac{y_i}{z_{i}}= y_{i}$$
+$$x_{i} = \frac{P_{11}X_{i} + P_{12}Y_{i} + P_{13}Z_{i} + P_{14}}{P_{31}X_{i} + P_{32}Y_{i} + P_{33}Z_{i} + P_{34}} $$
+$$y_{i} = \frac{P_{21}X_{i} + P_{22}Y_{i} + P_{23}Z_{i} + P_{24}}{P_{31}X_{i} + P_{32}Y_{i} + P_{33}Z_{i} + P_{34}} $$
+Rearranging:
+$$(P_{11}X_{i} + P_{12}Y_{i} + P_{13}Z_{i} + P_{14}) - x_{i}(P_{31}X_{i} + P_{32}Y_{i} + P_{33}Z_{i} + P_{34}) = 0 $$
+$$(P_{21}X_{i} + P_{22}Y_{i} + P_{23}Z_{i} + P_{24}) - y_{i}(P_{31}X_{i} + P_{32}Y_{i} + P_{33}Z_{i} + P_{34}) = 0 $$
+This is in the form of $Ap = 0$ where A is the matrix of coefficients and p is the vector of unknowns in P.
+
+To solve for P, we can use Singular Value Decomposition (SVD) on matrix A. The solution for p will be the right singular vector corresponding to the smallest singular value of A. This gives us the projection matrix P up to a scale factor.
+
+$$\begin{bmatrix} X_{i} & 0 \\ 0 & X_{i} \\ Y_{i} & 0 \\ 0 & Y_{i} \\ Z_{i} & 0 \\ 0 & Z_{i} \\ 1 & 0 \\ 0 & 1 \\ -x_{i}X_{i} & -y_{i}X_{i} \\ -x_{i}Y_{i} & -y_{i}Y_{i} \\ -x_{i}Z_{i} & -y_{i}Z_{i} \\ -x_{i} & -y_{i} \end{bmatrix} \begin{bmatrix} P_{11} \\ P_{21} \\ P_{12} \\ P_{22} \\ P_{13} \\ P_{23} \\ P_{14} \\ P_{24} \\ P_{31} \\ P_{32} \\ P_{33} \\ P_{34} \end{bmatrix} = 0 $$
+
+So, with 6 points we can solve for P.
+
+
+For more than 6 points:
+- Overdetermined set of equations.
+- We have to be careful as to avoid the trivial solution of $P = 0$
+- If observations are noisy we are cooked, P might not exist.
+
+We have the system $A_{(2M \times 12)} p = 0$.
+In reality, due to noise, $Ap \neq 0$. We want to find $\mathbf{p}$ that minimizes the error $\| A\mathbf{p} \|$.
+
+If we just minimize $\| A\mathbf{p} \|$, the math gives us the trivial solution $\mathbf{p} = 0$ (a vector of all zeros), which is physically meaningless.
+To fix the scale and avoid the zero vector, we add a constraint:
+$$ \| \mathbf{p} \|^2 = 1 $$
+
+Now the problem is:
+**Minimize** $\| A{p} \|^2$ subject to $\| p \|^2 = 1$.
+
+using Lagrange Multipliers. Define the loss function $L$:
+$$ L(\mathbf{p}, \lambda) = \| A\mathbf{p} \|^2 - \lambda (\| \mathbf{p} \|^2 - 1) $$
+$$ L(\mathbf{p}, \lambda) = \mathbf{p}^T A^T A \mathbf{p} - \lambda (\mathbf{p}^T \mathbf{p} - 1) $$
+
+Take the derivative w.r.t $\mathbf{p}$ and set to 0:
+$$ \frac{\partial L}{\partial \mathbf{p}} = 2 A^T A \mathbf{p} - 2 \lambda \mathbf{p} = 0 $$
+$$ A^T A \mathbf{p} = \lambda \mathbf{p} $$
+
+This is the definition of an Eigenvalue Problem:
+1.  ${p}$ must be an *eigenvector* of the matrix $A^T A$.
+2.  $\lambda$ is the corresponding *eigenvalue*.
+
+Which eigenvector? Substitute back into the error equation:
+$$ \text{Error} = \mathbf{p}^T A^T A \mathbf{p} = \mathbf{p}^T (\lambda \mathbf{p}) = \lambda (\mathbf{p}^T \mathbf{p}) = \lambda $$
+
+To minimize the error, we must choose the smallest eigenvalue $\lambda_{min}$.
+Thus, the solution $\mathbf{p}$ is the eigenvector of $A^T A$ corresponding to the smallest eigenvalue.
+
+The SVD Soln:
+Calculating $A^T A$ is numerically unstable (squares the condition number). So we just SVD on A.
+$$ A = U \Sigma V^T $$
+The columns of $V$ (rows of $V^T$) are the eigenvectors of $A^T A$.
+The singular values $\sigma$ are the square roots of eigenvalues $\lambda$.
+
+Therefore, the eigenvector for the smallest eigenvalue corresponds to the *smallest singular value*. In standard SVD implementations, values are sorted high-to-low, so this is the last column of V (or last row of $V^T$).
+
+V is 12 x 12, so the last column of V gives us the solution for P (up to scale). ( It's 12 x 12 because A is 2M x 12, so V is always 12 x 12).
+
+
+# Getting K from P:
+
+## Calibration using Checkerboards
+
+1. Detect corners in the checkerboard images to get image points.
+2. The corner of the checkerboard is set to be the origin in the world frame. Also assuming that checkerboard is on the plane Z = 0 of the world frame, i.e., all points on the checkerboard have Z = 0.
+
+So, we can remove the 3rd column of R as Z = 0 in world coordinates. 
+$$ x_{(3\times1)} \approx K_{(3\times3)} [r_1 \ r_{2} \ r_{3}\ t]_{(3\times3)} \begin{bmatrix} X_w \\ Y_w \\ 0 \\ 1 \end{bmatrix} $$
+
+$$ x_{(3\times1)} \approx K_{(3\times3)} [r_1 \ r_{2} \ t]_{(3\times3)} \begin{bmatrix} X_w \\ Y_w \\ 1 \end{bmatrix} $$
+
+
+This is a homography transformation from world points on the checkerboard plane to image points.
+$$ H = K [r_1 \ r_{2} \ t] = \begin{bmatrix} P_{11} & P_{12} & P_{14} \\ P_{21} & P_{22} & P_{24} \\ P_{31} & P_{32} & P_{34} \end{bmatrix} $$
+
+So our long 2 x 12 matrix A reduces to a 2 x 9 matrix for each image by putting Z = 0. Which looks like:
+
+$$\begin{bmatrix} X_{i} & Y_{i} & 1 & 0 & 0 & 0 & -x_{i}X_{i} & -x_{i}Y_{i} & -x_{i} \\ 0 & 0 & 0 & X_{i} & Y_{i} & 1 & -y_{i}X_{i} & -y_{i}Y_{i} & -y_{i} \end{bmatrix} \begin{bmatrix} H_{11} \\ H_{21} \\ H_{31} \\ H_{12} \\ H_{22} \\ H_{32} \\ H_{13} \\ H_{23} \\ H_{33} \end{bmatrix} = 0 $$
+
+With M points in the checkerboard, we get a 2M x 9 matrix A. We can solve for H using SVD as before.
+Since H only has 8 unknowns (up to scale), we need at least 4 points (8 equations) to solve for H.
+With multiple images of the checkerboard taken from different angles, we can compute multiple homography matrices $H_1, H_2, \ldots, H_n$.
+From each homography H, we can extract constraints on the intrinsic matrix K.
+## Extracting K from multiple Homographies
+From the homography, we have:
+$$ H = K [r_1 \ r_{2} \ t] $$
+Rearranging:
+$$ K^{-1} H = [r_1 \ r_{2} \ t] $$
+Since $r_1$ and $r_2$ are orthogonal unit vectors (columns of a rotation matrix), we have the following constraints:
+Because $r_1^T r_2 = 0$ ->
+$$H_1^T K^{-T} K^{-1} H_2 = 0$$
+Because $||r_1|| = ||r_2|| = 1$ ->
+$$H_1^T K^{-T} K^{-1} H_1 = H_2^T K^{-T} K^{-1} H_2$$
+
+$$H_1^T K^{-T} K^{-1} H_1 - H_2^T K^{-T} K^{-1} H_2 = 0$$
+
+Let $B = K^{-T} K^{-1}$, which is symmetric. We can express B in terms of the intrinsic parameters:
+
+We can run Cholesky decomposition on $B^{-1}$ to get K by writing it as:
+
+$$ B  = K^{-T} K^{-1} = K^{-T}(K^{-T})^T$$
+which follows the `chol(A) = L` where $A = LL^T$. Here $L = K^{-T}$.
+
+Since B is symmetric, we only have to solve for 6 unique elements in B. 
+
+Defining a vector $b = [B_{11}, B_{12}, B_{22}, B_{13}, B_{23}, B_{33}]^T$.
+
+We have $H^T B H = 0$ and $H^T B H - H^T B H = 0$.
+So we have to derive the equations in terms of the elements of b. Getting the G matrix such that $Gb = 0$.
+From the first constraint:
+$$H_1^T B H_2 = 0$$
+$$[h_{11} h_{12} h_{13}] \begin{bmatrix} B_{11} & B_{12} & B_{13} \\ B_{12} & B_{22} & B_{23} \\ B_{13} & B_{23} & B_{33} \end{bmatrix} \begin{bmatrix} h_{21} \\ h_{22} \\ h_{23} \end{bmatrix} = 0 $$
+Expanding this gives:
+$$ h_{11} h_{21} B_{11} + (h_{11} h_{22} + h_{12} h_{21}) B_{12} + h_{12} h_{22} B_{22} + (h_{11} h_{23} + h_{13} h_{21}) B_{13} + (h_{12} h_{23} + h_{13} h_{22}) B_{23} + h_{13} h_{23} B_{33} = 0 $$
+This can be written in the form:
+$$ [h_{11} h_{21}, (h_{11} h_{22} + h_{12} h_{21}), h_{12} h_{22}, (h_{11} h_{23} + h_{13} h_{21}), (h_{12} h_{23} + h_{13} h_{22}), h_{13} h_{23}] \begin{bmatrix} B_{11} \\ B_{12} \\ B_{22} \\ B_{13} \\ B_{23} \\ B_{33} \end{bmatrix} = 0 $$
+So, G becomes:
+$$ G = \begin{bmatrix} h_{11} h_{21} & (h_{11} h_{22} + h_{12} h_{21}) & h_{12} h_{22} & (h_{11} h_{23} + h_{13} h_{21}) & (h_{12} h_{23} + h_{13} h_{22}) & h_{13} h_{23} \end{bmatrix} $$
+
+
+In general for i,j:
+$$ g_{ij} = \begin{bmatrix} h_{i1} h_{j1} \\ h_{i1} h_{j2} + h_{i2} h_{j1} \\ h_{i2} h_{j2} \\ h_{i3} h_{j1} + h_{i1} h_{j3} \\ h_{i3} h_{j2} + h_{i2} h_{j3} \\ h_{i3} h_{j3} \end{bmatrix} $$
+
+From the second equation of Homograph constraints:
+$$ H_1^T B H_1 - H_2^T B H_2 = 0 $$
+$$ g_{11}^T b - g_{22}^T b = 0 $$
+So we can stack these equations for multiple images to form a matrix G such that:
+$$ Gb = 0_{(2\times1)} $$
+With n images, we have 2n equations. To solve for the 6 unknowns in b, we need at least 3 images (6 equations).
+
+To solve this we will do SVD on G:
+$$G_{(2n\times6)} = U \Sigma V^T $$
+Soln: Last column of V gives us b.
+
+Which gives us our B matrix. From B we can get K using Cholesky decomposition as mentioned before.
+
+
+
+### Requirement to get K:
+
+- At least 3 images of the checkerboard from different angles. 
+- At least 4 points in each image to compute Homography. ( 8 equations for 8 unknowns in H )
+- Detect corners accurately in the images to get precise image points.
