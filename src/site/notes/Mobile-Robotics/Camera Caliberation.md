@@ -42,6 +42,13 @@ For more than 6 points:
 - We have to be careful as to avoid the trivial solution of $P = 0$
 - If observations are noisy we are cooked, P might not exist.
 
+NOTE! -- Cautionary Tale:
+- We also don't have solution if all points are coplanar. ( i.e. Z is constant for all points )
+- All points lying on a line is even worse.
+- All points and projection center located on a twisted cubic curve.
+
+![Pasted image 20251122124407.png](/img/user/Mobile-Robotics/Pasted%20image%2020251122124407.png)
+
 We have the system $A_{(2M \times 12)} p = 0$.
 In reality, due to noise, $Ap \neq 0$. We want to find $\mathbf{p}$ that minimizes the error $\| A\mathbf{p} \|$.
 
@@ -80,10 +87,277 @@ Therefore, the eigenvector for the smallest eigenvalue corresponds to the *small
 
 V is 12 x 12, so the last column of V gives us the solution for P (up to scale). ( It's 12 x 12 because A is 2M x 12, so V is always 12 x 12).
 
-
+After solving the DLT system $Ap = 0$ using SVD, we recover **P** (up to scale).
 # Getting K from P:
 
-## Calibration using Checkerboards
+
+<div class="transclusion internal-embed is-loaded"><a class="markdown-embed-link" href="/mobile-robotics/getting-k-from-p/" aria-label="Open link"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a><div class="markdown-embed">
+
+
+
+
+
+From P we can decompose to get K, R, t using RQ Decomposition.
+
+
+$
+P = K [ R \mid t ].
+$
+
+After solving the DLT system $Ap = 0$ using SVD, we recover **P** (up to scale).
+
+### Step 1: Split P into $[M \mid \mathbf{p}_4]$
+
+Write the $3 \times 4$ projection matrix as:
+
+$
+P =
+\begin{bmatrix}
+p_{11} & p_{12} & p_{13} & p_{14} \\
+p_{21} & p_{22} & p_{23} & p_{24} \\
+p_{31} & p_{32} & p_{33} & p_{34}
+\end{bmatrix}
+=
+
+[ M \mid \mathbf{p}_4 ,]
+$
+
+where:
+
+* $M = P_{:,1:3}$ is the left $3\times3$ block
+* $\mathbf{p}_4 = P_{:,4}$ is the last column ( sorry for the python notation 😭)
+
+From the camera model:
+
+$
+P = K [R \mid t] \quad\Rightarrow\quad
+M = K R,\qquad
+\mathbf{p}_4 = K t.
+$
+
+So if we can factor $M$ into $K$ and $R$, we are done.
+
+
+###  Step 2: Fix the Scale of P
+
+P is only defined **up to scale**.
+Multiply P by any nonzero scalar and it still represents the same camera.
+
+You usually pick a convention like:
+
+* $K_{33} = 1$
+* or $p_{34} = 1$
+* or normalize $|M|$
+
+Pick one normalization and stick with it. STICK WITH IT.
+###  Step 3: RQ Decomposition of M
+
+We want:
+
+$
+M = K R
+$
+
+with:
+
+* $K$ upper triangular
+* $R$ orthonormal (rotation matrix)
+
+This is exactly what *RQ decomposition* gives you. ( note: not QR decomposition )
+
+So you compute:
+
+$
+M = K R.
+$
+
+Now you have initial versions of the intrinsic matrix (K) and rotation matrix (R).
+
+###  Step 4: Fix Camera Conventions
+
+Raw RQ output may be awkward. Fix it.
+
+####  1. Make diagonal entries of K positive
+
+If some diagonal $K_{ii}$ is negative:
+
+* multiply column $i$ of $K$ by $-1$
+* multiply row $i$ of $R$ by $-1$
+
+This preserves $M = K R$ but cleans up $K$.
+
+####  2. Ensure $\det(R)=+1$
+
+If $\det(R) = -1$:
+
+* flip the sign of one column of $K$ and corresponding row of $R$
+
+Now:
+
+* $K$ has positive focal lengths
+* $R$ is a proper rotation
+
+All good.
+
+### Step 5: Recover Translation t
+
+We know:
+
+$
+P = K [R \mid t] = [K R \mid K t] = [M \mid \mathbf{p}_4].
+$
+
+Thus:
+
+$
+\mathbf{p}_4 = K t
+\quad\Rightarrow\quad
+t = K^{-1} \mathbf{p}_4.
+$
+
+Now you have the translation vector.
+
+### Step 6: (Optional) Compute Camera Center C
+
+The camera center $C$ in world coordinates satisfies:
+
+$
+P \begin{bmatrix} C \ 1 \end{bmatrix} = 0.
+$
+
+Assuming $M$ is invertible:
+
+$
+M C + \mathbf{p}_4 = 0
+\quad\Rightarrow\quad
+C = -M^{-1} \mathbf{p}_4.
+$
+
+And note:
+
+$
+t = - R C.
+$
+
+This gives a sanity check between $C$ and $t$.
+
+
+
+In short:
+Given $P$:
+1. Split: $P = [M \mid \mathbf{p}_4]$
+2. Normalize P (fix scale).
+3. RQ-decompose $M = K R$.
+4. Fix signs so diagonal of $K$ is positive and $\det(R)=1$.
+5. Compute translation:
+
+$
+t = K^{-1} \mathbf{p}_4.
+$
+
+6. (Optional) Compute camera center:
+
+$
+C = -M^{-1} \mathbf{p}_4.
+$
+
+
+
+Code:
+
+```python
+
+import numpy as np
+from scipy.linalg import rq
+
+
+def decompose_projection_matrix(P):
+    """
+    Decomposes P = K [R | t] using RQ decomposition.
+
+    Args:
+        P: 3x4 Projection Matrix
+
+    Returns:
+        K: 3x3 Intrinsic Matrix
+        R: 3x3 Rotation Matrix
+        t: 3x1 Translation Vector
+        C: 3x1 Camera Center in World Coordinates
+    """
+    # 1. Split P into M (3x3) and p4 (3x1)
+    M = P[:, 0:3]
+    p4 = P[:, 3]
+
+    # 2. RQ Decomposition of M
+    # scipy.linalg.rq returns K, R such that M = K @ R
+    # K is upper triangular, R is orthogonal
+    K, R = rq(M)
+
+    # 3. Fix Signs (Enforce positive diagonal for K)
+    # The decomposition is not unique. We need K[i,i] > 0.
+    # If K[i,i] < 0, we negate the i-th column of K and i-th row of R.
+    T = np.diag(np.sign(np.diag(K)))
+
+    K = K @ T
+    R = T @ R
+
+    # 4. Enforce det(R) = 1 (Proper Rotation)
+    # If det(R) = -1, it's a reflection. Negate the whole matrix?
+    # Actually, standard RQ usually handles this, but strictly:
+    # If det(R) < 0, we might have a coordinate system flip.
+    # Usually scaling P by -1 fixes this if P was homogeneous.
+
+    # Normalize K so K[2,2] = 1
+    K = K / K[2, 2]
+
+    # 5. Recover Translation t
+    # p4 = K @ t  =>  t = inv(K) @ p4
+    t = np.linalg.inv(K) @ p4
+
+    # 6. Recover Camera Center C
+    # C = -inv(M) @ p4
+    C = -np.linalg.inv(M) @ p4
+
+    return K, R, t, C
+
+
+if __name__ == "__main__":
+    # Ground Truth
+    K_true = np.array([[1000, 0, 320], [0, 1000, 240], [0, 0, 1]])
+    # Rotation 90 deg around Z
+    R_true = np.array([[0, -1, 0], [1, 0, 0], [0, 0, 1]])
+    # Translation
+    t_true = np.array([10, 20, 5])
+
+    # Construct P
+    P_true = K_true @ np.column_stack((R_true, t_true))
+
+    print("Ground Truth P:\n", P_true)
+
+    # Decompose
+    K_est, R_est, t_est, C_est = decompose_projection_matrix(P_true)
+
+    print("Estimated Parameters")
+    print("K:\n", np.round(K_est, 2))
+    print("R:\n", np.round(R_est, 2))
+    print("t:", np.round(t_est, 2))
+    print("Camera Center C:", np.round(C_est, 2))
+
+    # Sanity Check: Does K[R|t] reconstruct P?
+    P_reconst = K_est @ np.column_stack((R_est, t_est))
+    print("\nReconstructed P:\n", np.round(P_reconst, 2))
+
+```
+
+
+</div></div>
+
+
+
+
+
+
+# Calibration using Checkerboards ( Zhang's Method )
 
 1. Detect corners in the checkerboard images to get image points.
 2. The corner of the checkerboard is set to be the origin in the world frame. Also assuming that checkerboard is on the plane Z = 0 of the world frame, i.e., all points on the checkerboard have Z = 0.
@@ -165,3 +439,119 @@ Which gives us our B matrix. From B we can get K using Cholesky decomposition as
 - At least 3 images of the checkerboard from different angles. 
 - At least 4 points in each image to compute Homography. ( 8 equations for 8 unknowns in H )
 - Detect corners accurately in the images to get precise image points.
+
+
+### Code for Zhang:
+
+```python
+
+import numpy as np
+
+
+def get_v_ij(H, i, j):
+    """
+    Calculates v_ij vector (1x6) from columns i and j of Homography H.
+    Indices i, j are 0-based (0, 1, 2 correspond to 1, 2, 3 in math).
+    Equation: v_ij = [h1i*h1j, h1i*h2j + h2i*h1j, h2i*h2j,
+                      h3i*h1j + h1i*h3j, h3i*h2j + h2i*h3j, h3i*h3j]
+    """
+    h_i = H[:, i]
+    h_j = H[:, j]
+
+    v = np.array(
+        [
+            h_i[0] * h_j[0],
+            h_i[0] * h_j[1] + h_i[1] * h_j[0],
+            h_i[1] * h_j[1],
+            h_i[2] * h_j[0] + h_i[0] * h_j[2],
+            h_i[2] * h_j[1] + h_i[1] * h_j[2],
+            h_i[2] * h_j[2],
+        ]
+    )
+    return v
+
+
+def solve_intrinsic_matrix(homographies):
+    """
+    Solves for K given a list of Homography matrices (at least 3).
+    Uses Zhang's constraints to solve Gb = 0.
+    """
+    # 1. Build Matrix G (2N x 6)
+    G = []
+    for H in homographies:
+        # Constraint 1: h1^T B h2 = 0  =>  v12^T b = 0
+        v12 = get_v_ij(H, 0, 1)
+
+        # Constraint 2: h1^T B h1 - h2^T B h2 = 0  =>  (v11 - v22)^T b = 0
+        v11 = get_v_ij(H, 0, 0)
+        v22 = get_v_ij(H, 1, 1)
+        v_diff = v11 - v22
+
+        G.append(v12)
+        G.append(v_diff)
+
+    G = np.array(G)
+
+    # 2. Solve Gb = 0 using SVD
+    # b is the eigenvector corresponding to smallest eigenvalue
+    U, S, Vt = np.linalg.svd(G)
+    b = Vt[-1]
+
+    # 3. Reconstruct B matrix
+    # b = [B11, B12, B22, B13, B23, B33]
+    B = np.array([[b[0], b[1], b[3]], [b[1], b[2], b[4]], [b[3], b[4], b[5]]])
+
+    # Check if B is positive definite. If not, flip sign of b (scale ambiguity).
+    # B must be positive definite for Cholesky.
+    # Simple check: B[0,0] should be positive (related to 1/fx^2)
+    if B[0, 0] < 0:
+        B = -B
+
+    # 4. Cholesky Decomposition: B = L L^T
+    try:
+        L = np.linalg.cholesky(B)
+    except np.linalg.LinAlgError:
+        print(
+            "Error: B is not positive definite. Data too noisy or singular configuration."
+        )
+        return np.eye(3)
+
+    # 5. Compute K
+    # B = (K^-1)^T (K^-1) = L L^T  =>  L = (K^-1)^T  =>  L^T = K^-1
+    # K = inv(L^T)
+    K_inv = L.T
+    K = np.linalg.inv(K_inv)
+
+    # Normalize K so K[2,2] = 1
+    K = K / K[2, 2]
+
+    return K
+
+
+if __name__ == "__main__":
+    # Ground Truth K
+    K_true = np.array([[1000, 0, 320], [0, 1000, 240], [0, 0, 1]])
+
+    # Generate random rotations/translations to make fake Homographies
+    H_list = []
+    for i in range(3):
+        # Random rotation (using small angles for simplicity)
+        ang = np.random.rand(3) * 0.5
+        from scipy.spatial.transform import Rotation
+
+        R = Rotation.from_euler("xyz", ang).as_matrix()
+        t = np.random.rand(3, 1)
+
+        # H = K [r1, r2, t]
+        # We remove the 3rd column of R (Z-axis)
+        H_sim = K_true @ np.hstack((R[:, [0, 1]], t))
+        H_sim = H_sim / H_sim[2, 2]  # Normalize
+        H_list.append(H_sim)
+
+    # Solve
+    K_est = solve_intrinsic_matrix(H_list)
+
+    print("True K:\n", K_true)
+    print("\nEstimated K:\n", np.round(K_est, 2))
+
+```
