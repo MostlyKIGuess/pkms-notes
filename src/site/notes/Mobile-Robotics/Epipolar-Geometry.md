@@ -89,6 +89,8 @@ We get 4 motion pairs from $E = [t]_x R$
 $$E = U\Sigma V^{T}, \Sigma = diag(1,1,0)$$
 
 So 4 possible pairs would be:
+
+( The following is not true, pls read page 277/673 in Multiple View Geometry for correct understanding ) ( It's Section 9.6.2 in the book )
 $$R = U W V^{T}, t = +u_{3}$$
 $$R = U W V^{T}, t = -u_{3}$$
 $$R = U W^{T} V^{T}, t = +u_{3}$$
