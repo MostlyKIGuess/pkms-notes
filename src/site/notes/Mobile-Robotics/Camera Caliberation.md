@@ -412,7 +412,7 @@ Expanding this gives:
 $$ h_{11} h_{21} B_{11} + (h_{11} h_{22} + h_{12} h_{21}) B_{12} + h_{12} h_{22} B_{22} + (h_{11} h_{23} + h_{13} h_{21}) B_{13} + (h_{12} h_{23} + h_{13} h_{22}) B_{23} + h_{13} h_{23} B_{33} = 0 $$
 This can be written in the form:
 $$ [h_{11} h_{21}, (h_{11} h_{22} + h_{12} h_{21}), h_{12} h_{22}, (h_{11} h_{23} + h_{13} h_{21}), (h_{12} h_{23} + h_{13} h_{22}), h_{13} h_{23}] \begin{bmatrix} B_{11} \\ B_{12} \\ B_{22} \\ B_{13} \\ B_{23} \\ B_{33} \end{bmatrix} = 0 $$
-So, G becomes:
+o, G becomes:
 $$ G = \begin{bmatrix} h_{11} h_{21} & (h_{11} h_{22} + h_{12} h_{21}) & h_{12} h_{22} & (h_{11} h_{23} + h_{13} h_{21}) & (h_{12} h_{23} + h_{13} h_{22}) & h_{13} h_{23} \end{bmatrix} $$
 
 
@@ -440,7 +440,9 @@ Which gives us our B matrix. From B we can get K using Cholesky decomposition as
 - At least 4 points in each image to compute Homography. ( 8 equations for 8 unknowns in H )
 - Detect corners accurately in the images to get precise image points.
 
+### Original Zhang:
 
+<iframe src="/img/user/Mobile-Robotics/zhang.pdf" width="100%" height="600px" title="zhang.pdf" style="border:1px solid #ccc;"></iframe>
 ### Code for Zhang:
 
 ```python
