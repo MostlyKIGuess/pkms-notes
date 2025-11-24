@@ -6,7 +6,6 @@
 Define the Problem:
 Given K and set of N 3D world points to 2D pixel correspondences, find R and t.
 
-
 ### Reprojection Error:
 
 The optimal pose is found my minimizing reprojection error. It is the error between "observed" pixel coordinates and "predicted" pixel coordinates obtained by projecting the 3D points using the estimated pose. 
@@ -22,8 +21,6 @@ The cost function to minimize is the sum of squared reprojection errors over all
 $$ J(R, t) = \sum_{i=1}^{N} \left\| x_{i} - \hat{x}_{i} \right\|^2 $$
 
 where $x_{i} = \begin{bmatrix} u_{i} \\ v_{i} \end{bmatrix}$ are the observed pixel coordinates.
-Here is the markdown continuing from your notes, followed by the Python implementation for the exam.
-
 ### The Optimization Problem (Known Correspondences)
 
 This is [[Mobile-Robotics/NLS\|NLS]] problem.

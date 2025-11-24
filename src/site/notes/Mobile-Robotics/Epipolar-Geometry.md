@@ -45,7 +45,7 @@ $$e'^{T}Fx''= 0$$
 $$e''^{T}F^Tx'= 0$$
 Epipoles are the null space of the fundamental matrix.
 
-$$null(F^{T)}= e'$$
+$$null(F^{T})= e'$$
 $$null(F)= e''$$
 
 
@@ -78,7 +78,7 @@ Where $||.||_F$ is the Frobenius norm.
 
 Computation of F is done over n correspondence, to improve we can run RANSAC to filter out outliers.
 
-Note: F is confuputed on the transformed image if $I' = TI$ then $F = T^{T}F'T$ 
+Note: F is computed on the transformed image if $I' = TI$ then $F = T^{T}F'T$ 
 
 
 other methods for finding  F: Normalized 8-point algorithm, 7-point algorithm, 5-point algorithm.
