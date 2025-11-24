@@ -91,9 +91,4 @@ where $U, S, V$ come from the SVD of the covariance matrix $W = \sum (p_j - \mu_
 
 ## Applications
 
-fir kabhi 🙏🏻🙏🏻🙏🏻🙏🏻
-## ICP-SLAM
-
 [[Mobile-Robotics/ICP-SLAM\|ICP-SLAM]]
-
-**

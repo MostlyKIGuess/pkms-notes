@@ -27,13 +27,18 @@ Read this with some caution. It’s proofread, but not as polished as my usual b
 
 # ICP
 
+
 - [[Mobile-Robotics/ICP\|ICP]]
+- [[Mobile-Robotics/ICP-SLAM\|ICP-SLAM]]
+
 # Camera
 - [[Mobile-Robotics/Cameras?\|Cameras?]]
 
 
-
+# Visual SLAM
+- [[Mobile-Robotics/V-SLAM\|V-SLAM]]
 # Forgive me for Forgetting
 - [[Mobile-Robotics/Cramer's\|Cramer's]]
 - 
 - [[Mobile-Robotics/Random SLAM Info\|Random SLAM Info]]
+
