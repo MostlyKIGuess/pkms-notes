@@ -90,7 +90,8 @@ The essential matrix E is a 3x3 rank 2 matrix that relates corresponding points 
 
 - E has 5 DOF (3 for rotation, 2 for translation direction). It is defined upto scale.
 - E can be computed from the fundamental matrix F if the intrinsic camera parameters K and K' are known:
-- $$ E = K'^{T} F K'' $$
+- $$ E = K''^{T} F K' $$
+so $$F = K''^{-T} E K'^{-1}$$
 - The essential matrix can also be computed directly from corresponding points in calibrated images using the 8-point algorithm, similar to the fundamental matrix. As it holds the following epipolar constraint:
 $$x'^{T} E x'' = 0$$
 Where $x'$ and $x''$ are normalized image coordinates (after removing the effect of intrinsic parameters).
