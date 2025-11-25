@@ -37,8 +37,15 @@ Read this with some caution. It’s proofread, but not as polished as my usual b
 
 # Visual SLAM
 - [[Mobile-Robotics/V-SLAM\|V-SLAM]]
+
+# Bundle-Adjustment
+
+[[Mobile-Robotics/Bundle-Adjustment\|Bundle-Adjustment]]
+
+
 # Forgive me for Forgetting
 - [[Mobile-Robotics/Cramer's\|Cramer's]]
 - 
 - [[Mobile-Robotics/Random SLAM Info\|Random SLAM Info]]
+
 

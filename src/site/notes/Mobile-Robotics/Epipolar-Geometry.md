@@ -83,6 +83,19 @@ Note: F is computed on the transformed image if $I' = TI$ then $F = T^{T}F'T$
 
 other methods for finding  F: Normalized 8-point algorithm, 7-point algorithm, 5-point algorithm.
 
+
+### Essential Matrix
+
+The essential matrix E is a 3x3 rank 2 matrix that relates corresponding points in calibrated stereo images. 
+
+- E has 5 DOF (3 for rotation, 2 for translation direction). It is defined upto scale.
+- E can be computed from the fundamental matrix F if the intrinsic camera parameters K and K' are known:
+- $$ E = K'^{T} F K'' $$
+- The essential matrix can also be computed directly from corresponding points in calibrated images using the 8-point algorithm, similar to the fundamental matrix. As it holds the following epipolar constraint:
+$$x'^{T} E x'' = 0$$
+Where $x'$ and $x''$ are normalized image coordinates (after removing the effect of intrinsic parameters).
+
+
 ### Chirality and Pose Recovery
 
 We get 4 motion pairs from $E = [t]_x R$
